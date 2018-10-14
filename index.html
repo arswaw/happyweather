@@ -21,7 +21,27 @@
 
     <script type="text/x-template" id="queries-template">
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            Queries
+            <h6 class="border-bottom border-gray pb-2 mb-0">Recent queries</h6>
+            <article v-if="queries" v-for="query of queries">
+                <div class="media text-muted pt-3">
+                <img v-if="query.predictions.length === 0" src="http://placehold.it/32/FF0000?text=✓" class="mr-2 rounded">
+                <img v-if="query.predictions.length > 0" src="http://placehold.it/32/008000?text=✓" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">{{query.geographicalAttributes["city-name"]}} - {{query["numberOfPredictedDays"]}} days</strong> 
+                    <ul class="list-group">
+                            <li class="list-group-item">Creator: {{query.requester}}</li>
+                            <li class="list-group-item">Date: {{new Date(query.date).toDateString()}}</li>
+                            <li class="list-group-item">State: {{query.geographicalAttributes["state"]}}</li>
+                            <li class="list-group-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Ready"}}</li>
+                            <li class="list-group-item">Accuracy: Collecting Data</li>
+                            <li class="list-group-item"><button class="btn btn-info">View</button></li>
+                          </ul>
+                </p>
+                </div>
+            </article>
+                <small class="d-block text-right mt-3">
+                  <a href="#">Back to top</a>
+                </small>
         </div>
     </script>
     <script type="text/x-template" id="places-template">
