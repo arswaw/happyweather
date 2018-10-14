@@ -52,12 +52,12 @@
                         <input type="text" name="requesterinput" class="form-control" id="requesterInput" aria-describedby="requesterHelp">
                         <small id="requesterHelp" class="form-text text-muted">Something to identify your prediction by.</small>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="locationInput">Location</label>
                         <input type="text" name="locationinput" v-model="place" @change="onPlaceType" class="form-control" id="locationInput">
-                    </div>
-                    <button type="submit" class="btn btn-primary" v-on:click="contactServer">Predict</button>
+                    </div>            
                 </form>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="contactServer">Predict</button>
         </div>
     </script>
     <script type="text/x-template" id="main-template">
@@ -68,10 +68,10 @@
                     <h6 class="border-bottom border-gray pb-2 mb-0">Introduction</h6>
                     <p>
                         Welcome to Happy Weather! This is a friendly weather prediction 
-                        system based Machine Learning. Enter a location you want to predict
-                        the weather for. In a few minutes your query will have a prediction
+                        system based on Machine Learning. Enter a location you want to predict
+                        the weather for. In a few minutes your query will display a prediction
                         for 7 days in the future. Later, the real-world weather for those 7
-                        days will be collected and will be used to verify the accuracy of the model.
+                        days will be collected and will be used to verify the accuracy of the prediction.
                     </p>
                 </div>
                 <section>
