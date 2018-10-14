@@ -1,2 +1,2 @@
 # happyweather
-The frontend for a Machine Learning powered weather prediction system.
+The frontend of a weather prediction system based on Machine Learning.
