@@ -46,7 +46,18 @@
     </script>
     <script type="text/x-template" id="places-template">
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            Places
+                <form class="input-group mb-3">
+                    <div class="form-group">
+                        <label for="requesterInput">Requester</label>
+                        <input type="text" name="requesterinput" class="form-control" id="requesterInput" aria-describedby="requesterHelp">
+                        <small id="requesterHelp" class="form-text text-muted">Something to identify your prediction by.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="locationInput">Location</label>
+                        <input type="text" name="locationinput" v-model="place" @change="onPlaceType" class="form-control" id="locationInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary" v-on:click="contactServer">Predict</button>
+                </form>
         </div>
     </script>
     <script type="text/x-template" id="main-template">
