@@ -54,10 +54,18 @@
                     </div>
                     <div class="form-group col">
                         <label for="locationInput">Location</label>
-                        <input type="text" name="locationinput" v-model="place" @change="onPlaceType" class="form-control" id="locationInput">
-                    </div>            
+                        <input :disabled="!showLocationInput" type="text" name="locationinput" v-model="place" class="form-control" id="locationInput">
+                    </div>
+                                
                 </form>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="contactServer">Predict</button>
+                <div v-if="showTypeBanner" class="alert alert-secondary" role="alert">
+                    Keep typing...
+                </div>
+                <div v-if="showLocationBanner" class="alert alert-secondary" role="alert">
+                    {{place && places && places.results[0].name}}
+                </div>
+                <button v-if="showSelectLocationButton" class="btn btn-primary btn-lg btn-block" v-on:click="selectLocation">Select Location</button>
+                <button v-if="showPredictButton" class="btn btn-primary btn-lg btn-block" v-on:click="contactServer">Predict</button>
         </div>
     </script>
     <script type="text/x-template" id="main-template">
