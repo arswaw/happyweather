@@ -12,12 +12,42 @@ const Places = {
             showLocationBanner: false,
             showPredictButton : false,
             showSelectLocationButton: false,
-            showLocationInput: true
+            showLocationInput: true,
+            requester: ""
         }
     },
     methods: {
         async contactServer() {
-            console.info("Preparing to contact server")
+            try {
+                const response = await fetch(`${APIURL}/query`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Methods': "POST"
+                  },
+                  mode: 'cors',
+                  body: JSON.stringify({
+                    date: new Date(),
+                    city: this.places.results[0].name,
+                    coords: {
+                      "type": "Point",
+                      "coordinates": [
+                          this.places.results[0].geometry.location.lng,
+                          this.places.results[0].geometry.location.lat,
+                      ],
+                      "state": "IN"
+                    },
+                    requester: this.requester
+                  })
+                })
+        
+                if (response.status === 200) {
+                  this.status = "Sent!"
+                }
+        
+              } catch (err) {
+                console.error("Error with retrieving data", err)
+              }
         },
         selectLocation() {
             this.showLocationInput = false
