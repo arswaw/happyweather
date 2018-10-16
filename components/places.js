@@ -15,6 +15,7 @@ const Places = {
             showLocationInput: true,
             requester: "",
             errorText: ""
+            
         }
     },
     methods: {
@@ -37,7 +38,8 @@ const Places = {
                   mode: 'cors',
                   body: JSON.stringify({
                     date: new Date(),
-                    city: this.places.results[0].name,
+                    city: this.places.results[0].formatted_address,
+                    shortName: this.places.results[0].name,
                     coords: {
                       "type": "Point",
                       "coordinates": [
