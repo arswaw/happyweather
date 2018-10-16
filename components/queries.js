@@ -5,7 +5,8 @@ import {
 const Queries = {
     data: function () {
         return {
-            queries: []
+            queries: [],
+            status: ""
         }
     },
     methods: {
@@ -21,6 +22,10 @@ const Queries = {
 
             this.queries = await response.json()
             console.info("queries from queries.js", this.queries)
+            this.status = "Refreshed!"
+            setTimeout(() => {
+                this.status = ""
+            }, 3000)
         }
     },
     created: function () {
