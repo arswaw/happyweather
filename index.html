@@ -21,7 +21,7 @@
 
     <script type="text/x-template" id="queries-template">
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Recent queries</h6>
+            <h6 class="border-gray pb-2 mb-0">Recent queries<button v-on:click="refresh" class="btn btn-primary float-right">Refresh</button></h6><br>
             <article v-if="queries" v-for="query of queries">
                 <div class="media text-muted pt-3">
                 <img v-if="query.predictions.length === 0" src="http://placehold.it/32/FF0000?text=✓" class="mr-2 rounded">
@@ -32,7 +32,7 @@
                             <li class="list-group-item">Creator: {{query.requester}}</li>
                             <li class="list-group-item">Date: {{new Date(query.date).toDateString()}}</li>
                             <li class="list-group-item">State: {{query.geographicalAttributes["state"]}}</li>
-                            <li class="list-group-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Ready"}}</li>
+                            <li class="list-group-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Awaiting"}}</li>
                             <li class="list-group-item">Accuracy: Collecting Data</li>
                             <li class="list-group-item"><button class="btn btn-info">View</button></li>
                           </ul>
@@ -66,14 +66,15 @@
                 </div>
                 <button v-if="showSelectLocationButton" class="btn btn-primary btn-lg btn-block" v-on:click="selectLocation">Select Location</button>
                 <button v-if="showPredictButton" class="btn btn-primary btn-lg btn-block" v-on:click="contactServer">Predict</button>
-        </div>
+                {{errorText}}
+            </div>
     </script>
     <script type="text/x-template" id="main-template">
-        <main role="main" class="container"><br>
+        <main role="main" class="weather-width"><br>
 
             <div class="my-3 p-3 rounded">
                 <div class="my-3 p-3 bg-white rounded shadow-sm">
-                    <h6 class="border-bottom border-gray pb-2 mb-0">Introduction</h6>
+                    <h6 class="border-gray pb-2 mb-0">Introduction</h6>
                     <p>
                         Welcome to Happy Weather! This is a friendly weather prediction 
                         system based on Machine Learning. Enter a location you want to predict

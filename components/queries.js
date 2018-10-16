@@ -8,7 +8,8 @@ const Queries = {
             queries: []
         }
     },
-    created: async function () {
+    methods: {
+        async refresh() {
             const response = await fetch(`${APIURL}/query`, {
                 method: 'GET',
                 headers: {
@@ -20,8 +21,12 @@ const Queries = {
 
             this.queries = await response.json()
             console.info("queries from queries.js", this.queries)
-        },
-        template: '#queries-template'
+        }
+    },
+    created: function () {
+        this.refresh()
+    },
+    template: '#queries-template'
 }
 
 export default Queries

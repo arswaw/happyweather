@@ -13,11 +13,20 @@ const Places = {
             showPredictButton : false,
             showSelectLocationButton: false,
             showLocationInput: true,
-            requester: ""
+            requester: "",
+            errorText: ""
         }
     },
     methods: {
         async contactServer() {
+
+          if (!this.place || !this.requester) {
+            this.errorText = "You need to specify a requester."
+            return
+          }
+
+          this.errorText = ""
+
             try {
                 const response = await fetch(`${APIURL}/query`, {
                   method: 'POST',

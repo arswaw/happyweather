@@ -1,3 +1,16 @@
 .bg-blue {
     background-color: #2385e6
 }
+
+@media only screen and (min-width: 50em) {
+    .weather-width {
+        max-width: 90%;
+    }
+}
+
+@media all and (min-width: 1025px) {
+    .weather-width {
+        margin-left: 20%;
+        max-width: 60%;
+    }
+}
