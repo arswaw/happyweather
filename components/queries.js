@@ -25,6 +25,9 @@ const Queries = {
     },
     created: function () {
         this.refresh()
+        this.$root.$on('RefreshQueries', () => {
+            this.refresh()
+        })
     },
     template: '#queries-template'
 }

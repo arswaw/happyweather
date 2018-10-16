@@ -51,7 +51,11 @@ const Places = {
                 })
         
                 if (response.status === 200) {
-                  this.status = "Sent!"
+                  this.$root.$emit('RefreshQueries')
+                  this.showPredictButton = false
+                  this.requester = ""
+                  this.place = ""
+                  this.showLocationInput = true
                 }
         
               } catch (err) {
