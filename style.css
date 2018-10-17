@@ -2,6 +2,13 @@
     background-color: #2385e6
 }
 
+.connect {
+    width: 14px;
+    height: 14px;
+    background-color: green;
+    border-radius: 100%;
+}
+
 @media only screen and (min-width: 50em) {
     .weather-width {
         max-width: 90%;
