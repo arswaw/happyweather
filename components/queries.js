@@ -26,6 +26,13 @@ const Queries = {
                 mode: 'cors',
             })
 
+            if (response.status !== 200) {
+                this.status = "There was an error retrieving queries."
+                setTimeout(() => {
+                    this.status = ""
+                }, 3000)
+            }
+
             this.queries = await response.json()
             console.info("queries from queries.js", this.queries)
             this.status = "Refreshed!"

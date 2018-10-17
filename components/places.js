@@ -48,7 +48,8 @@ const Places = {
                       ],
                       "state": "IN"
                     },
-                    requester: this.requester
+                    requester: this.requester,
+                    placeID: this.places.results[0].place_id
                   })
                 })
         
@@ -88,6 +89,13 @@ const Places = {
             },
             mode: 'cors',
           })
+
+          if (response.status !== 200) {
+            this.errorText = "There was an issue with retrieving locations"
+            setTimeout(() => {
+              this.errorText = ""
+            }, 3000)
+          }
       
           this.places = await response.json()
     
