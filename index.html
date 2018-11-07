@@ -121,12 +121,12 @@
                 <form class="input-group mb-3">
                     <div class="form-group">
                         <label for="requesterInput">Requester</label>
-                        <input v-model="requester" type="text" name="requesterinput" class="form-control" id="requesterInput" aria-describedby="requesterHelp">
+                        <input v-model="requester" placeholder="Your name" type="text" name="requesterinput" class="form-control" id="requesterInput" aria-describedby="requesterHelp">
                         <small id="requesterHelp" class="form-text text-muted">Something to identify your prediction by.</small>
                     </div>
                     <div class="form-group col">
                         <label for="locationInput">Location</label>
-                        <input :disabled="!showLocationInput" type="text" name="locationinput" v-model="place" class="form-control" id="locationInput">
+                        <input :disabled="!showLocationInput" placeholder="Of location to predict weather for" type="text" name="locationinput" v-model="place" class="form-control" id="locationInput">
                     </div>
                                 
                 </form>
