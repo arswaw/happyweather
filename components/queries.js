@@ -2,6 +2,8 @@ import {
     APIURL
 } from '../main.js'
 
+import { QueriesTemplate } from '../templates/queries-template.js'
+
 const Queries = {
     data: function () {
         return {
@@ -73,7 +75,7 @@ const Queries = {
             this.refresh()
         })
     },
-    template: '#queries-template'
+    template: QueriesTemplate
 }
 
-export default Queries
+export { Queries }

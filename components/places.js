@@ -1,9 +1,10 @@
+import { PlacesTemplate } from '../templates/places-template.js'
 import {
     APIURL
 } from '../main.js'
 
 const Places = {
-    template: '#places-template',
+    template: PlacesTemplate,
     data: function() {
         return {
             place: "",
@@ -115,4 +116,4 @@ const Places = {
       },
 }
 
-export default Places
+export { Places }
