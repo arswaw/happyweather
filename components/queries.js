@@ -3,8 +3,23 @@ import {
 } from '../main.js'
 
 import { QueriesTemplate } from '../templates/queries-template.js'
+import { QueriesGrid } from './queries-grid.js'
+import { CollapsePopup } from './collapse-popup.js'
 
 const Queries = {
+    components: {
+        'queries-grid': QueriesGrid,
+        'collapse-popup': CollapsePopup
+    },
+    mounted: function() {
+        this.$root.$on('popup', index => {
+            this.selectedQuery = this.queries[index]
+            this.$root.$emit('open-popup')
+        })
+        this.$root.$on('close-popup', () => {
+            this.selectedQuery = {}
+        })
+    },
     data: function () {
         return {
             queries: [],
@@ -14,6 +29,7 @@ const Queries = {
             showHistorical: false,
             showPredicted: false,
             showActual: false,
+            selectedQuery: {},
             modalQuery: {}
         }
     },
@@ -42,32 +58,6 @@ const Queries = {
                 this.status = ""
             }, 3000)
         },
-        popup(index) {
-            const query = this.queries[index]
-            console.info("Popping up with index", index, query)
-            this.showFullQuery = true
-            this.modalQuery = query
-            this.modalTitle = `${query.geographicalAttributes["city-name"]} from ${query.requester}`
-        },
-        determineCollapse(section) {
-            // Taking the easy way out
-            switch (section) {
-                case "historical":
-                    this.showHistorical = true
-                    this.showPredicted = false
-                    this.showActual = false
-                    break
-                case "predicted":
-                    this.showHistorical = false
-                    this.showPredicted = true
-                    this.showActual = false
-                    break
-                case "actual":
-                    this.showHistorical = false
-                    this.showPredicted = false
-                    this.showActual = true
-            }
-        }
     },
     created: function () {
         this.refresh()

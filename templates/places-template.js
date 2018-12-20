@@ -9,7 +9,7 @@ const PlacesTemplate = `
                     </div>
                     <div class="form-group col">
                         <label for="locationInput">Location</label>
-                        <input :disabled="!showLocationInput" placeholder="of location to predict weather for" type="text" name="locationinput" v-model="place" class="form-control" id="locationInput">
+                        <input :disabled="!showLocationInput" placeholder="Location to predict weather for" type="text" name="locationinput" v-model="place" class="form-control" id="locationInput">
                     </div>
                                 
                 </form>
