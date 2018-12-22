@@ -1,6 +1,6 @@
 import {
     APIURL
-} from '../main.js'
+} from '../globals.js'
 
 import { QueriesTemplate } from '../templates/queries-template.js'
 import { QueriesGrid } from './queries-grid.js'

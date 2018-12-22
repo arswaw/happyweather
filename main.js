@@ -5,9 +5,6 @@ import { Places } from './components/places.js'
 // ES6 Template Imports
 import { MainTemplate } from './templates/main-template.js'
 
-// Environment Variables
-const APIURL = 'http://18.222.95.139:3000'
-
 new Vue({
   el: '#app',
   components: {
@@ -16,7 +13,3 @@ new Vue({
   },
   template: MainTemplate
 })
-
-export {
-  APIURL
-}

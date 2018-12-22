@@ -1,7 +1,7 @@
 import { PlacesTemplate } from '../templates/places-template.js'
 import {
     APIURL
-} from '../main.js'
+} from '../globals.js'
 
 const Places = {
     template: PlacesTemplate,
