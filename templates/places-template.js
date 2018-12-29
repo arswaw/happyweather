@@ -1,5 +1,4 @@
 const PlacesTemplate = `
-
         <div class="my-3 p-3 bg-white rounded shadow-sm">
                 <form class="input-group mb-3">
                     <div class="form-group">
