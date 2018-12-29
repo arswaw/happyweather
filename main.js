@@ -1,3 +1,6 @@
+// Add Vue global.
+import Vue from './vue.js'
+
 // ES6 Component Imports
 import { Queries } from './components/queries.js'
 import { Places } from './components/places.js'

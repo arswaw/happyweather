@@ -35,14 +35,9 @@ const Queries = {
     },
     methods: {
         async refresh() {
-            const response = await fetch(`${APIURL}/query`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Methods': "GET"
-                },
-                mode: 'cors',
-            })
+            const response = await axios.get(`${APIURL}/query`)
+
+            console.info("response", response)
 
             if (response.status !== 200) {
                 this.status = "There was an error retrieving queries."
@@ -51,7 +46,7 @@ const Queries = {
                 }, 3000)
             }
 
-            this.queries = await response.json()
+            this.queries = await response.data
             console.info("queries from queries.js", this.queries)
             this.status = "Refreshed!"
             setTimeout(() => {

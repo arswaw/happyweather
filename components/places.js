@@ -30,14 +30,7 @@ const Places = {
           this.errorText = ""
 
             try {
-                const response = await fetch(`${APIURL}/query`, {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Methods': "POST"
-                  },
-                  mode: 'cors',
-                  body: JSON.stringify({
+                const response = await axios.post(`${APIURL}/query`, JSON.stringify({
                     date: new Date(),
                     city: this.places.results[0].formatted_address,
                     shortName: this.places.results[0].name,
@@ -52,7 +45,7 @@ const Places = {
                     requester: this.requester,
                     placeID: this.places.results[0].place_id
                   })
-                })
+                )
         
                 if (response.status === 200) {
                   this.$root.$emit('RefreshQueries')
@@ -82,14 +75,7 @@ const Places = {
               this.showSelectLocationButton = false
               return
           }
-          const response = await fetch(`${APIURL}/text?place=${value}`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Methods': "GET"
-            },
-            mode: 'cors',
-          })
+          const response = await axios.get(`${APIURL}/text?place=${value}`)
 
           if (response.status !== 200) {
             this.errorText = "There was an issue with retrieving locations"
