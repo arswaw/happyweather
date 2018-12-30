@@ -1,6 +1,6 @@
 import { HomeTemplate } from '../templates/home-template.js'
 
-import { Queries } from './queries.js'
+import { Queries } from './queries/queries.js'
 import { Places } from './places.js'
 
 import { Info } from './info.js'

@@ -1,4 +1,4 @@
-import { QueriesGridTemplate } from '../templates/queries-grid-template.js'
+import { QueriesGridTemplate } from '../../templates/queries/queries-grid-template.js'
 
 const QueriesGrid = {
     template: QueriesGridTemplate,

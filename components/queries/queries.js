@@ -1,10 +1,10 @@
 import {
     APIURL
-} from '../globals.js'
+} from '../../globals.js'
 
-import { QueriesTemplate } from '../templates/queries-template.js'
-import { QueriesGrid } from './queries-grid.js'
-import { CollapsePopup } from './collapse-popup.js'
+import { QueriesTemplate } from '../../templates/queries/queries-template.js'
+import { QueriesGrid } from './queries-grid'
+import { CollapsePopup } from '../collapse-popup.js'
 
 const Queries = {
     components: {

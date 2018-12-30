@@ -5,7 +5,7 @@ import Vue from './vue.js'
 import { Home } from './components/home.js'
 import { Navbar } from './components/navbar.js'
 import { NotFound } from './components/not-found.js'
-import { Details } from './components/details.js'
+import { Details } from './components/details/details.js'
 
 // ES6 Template Imports
 import { MainTemplate } from './templates/main-template.js'
