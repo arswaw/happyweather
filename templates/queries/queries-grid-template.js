@@ -11,7 +11,7 @@ const QueriesGridTemplate = `
                             <li class="list-group-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Awaiting"}}</li>
                             <li class="list-group-item">Accuracy: Collecting Data</li>
                             <li class="list-group-item"><button v-on:click="sendQueryToParent(index)" class="btn btn-info">Quick View</button>
-                            <button class="btn btn-info"><router-link to="/details" style="color:white">Detailed View</router-link></button>
+                            <button class="btn btn-info" @click="sendQueryToDetails"><router-link to="/details" style="color:white">Detailed View</router-link></button>
                             </li>
                           </ul>
                 </p>

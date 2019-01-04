@@ -5,6 +5,9 @@ const QueriesTemplate = `
             <div v-if="queries" v-for="(query, index) of queries">
                 <queries-grid v-bind:query="query" v-bind:index="index"></queries-grid>
             </div>
+            <div v-else class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
             <template v-if="selectedQuery">
                 <collapse-popup v-bind:selectedQuery="selectedQuery"></collapse-popup>
             </template>

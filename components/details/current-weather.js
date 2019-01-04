@@ -50,15 +50,14 @@ const CurrentWeather = {
                 "id": 420014927,
                 "name": "South Bend",
                 "cod": 200
-              }
+              },
+              test: true
         }
     },
     methods: {
         getWeather: async function () {
             try {
                 const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=46545&APPID=2f69a3fc1f1d2658ba2a8143a779f7e5`)
-
-                console.info("response", response)
 
                 if (response.status !== 200) {
                     this.status = "There was an error retrieving weather data."

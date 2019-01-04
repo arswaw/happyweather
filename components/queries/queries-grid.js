@@ -6,6 +6,10 @@ const QueriesGrid = {
     methods: {
         sendQueryToParent(index) {
             this.$root.$emit('popup', index)
+        },
+        sendQueryToDetails() {
+            console.info("Sending query to details", this.query)
+            this.$root.$emit('select-query', this.query)
         }
     }
 }
