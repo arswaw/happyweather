@@ -34,23 +34,26 @@ const Queries = {
             showPredicted: false,
             showActual: false,
             selectedQuery: {},
-            modalQuery: {}
+            modalQuery: {},
+            showSpinner: true
         }
     },
     methods: {
         async refresh() {
+            this.showSpinner = true
             const response = await GetQueries().next()
 
             this.queries = response.value
             console.info("queries from queries.js", this.queries)
             this.status = "Refreshed!"
+            this.showSpinner = false
             setTimeout(() => {
                 this.status = ""
             }, 3000)
         },
     },
-    created: function () {
-        this.refresh()
+    created: async function () {
+        await this.refresh()
         this.$root.$on('RefreshQueries', () => {
             this.refresh()
         })

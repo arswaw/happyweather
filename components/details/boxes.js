@@ -19,10 +19,15 @@ const Boxes = {
     },
     methods: {
         testGenerateNewQuery: function () {
-            this.grid.push(JSON.parse(JSON.stringify(this.query)))
+            if (this.grid.length <=4) {
+                this.grid.push(JSON.parse(JSON.stringify(this.query)))
+            }
         },
         testRemoveNewQuery: function() {
-            this.grid.pop()
+            if (this.grid.length > 1) {
+                this.grid.pop()
+            }
+            
         }
     }
 }
