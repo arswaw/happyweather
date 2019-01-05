@@ -1,9 +1,5 @@
 const DetailsTemplate = `
-<div>
-    <nav>
-        <router-link to="boxes">Boxes</router-link>
-        <router-link to="select">Select</router-link>
-    </nav>
+<div><br>
     <transition :appear=true name="slide-fade" mode="out-in">
         <router-view
             :query="query"
