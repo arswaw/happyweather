@@ -1,4 +1,9 @@
 const InfoTemplate = `
+<transition appear
+    name="add-new-detail-row-transition"
+    enter-active-class="animated pulse"
+    leave-active-class="animated fadeOut"
+>
 <div v-if="show" class="my-3 p-3 rounded">
                 <div class="my-3 p-3 bg-white rounded shadow-sm">
                 <button type="button" @click="show=false" class="close" data-dismiss="modal" aria-label="Close">
@@ -14,6 +19,7 @@ const InfoTemplate = `
                     </p>
                 </div>
                 </div>
+                </transition>
 `
 
 export { InfoTemplate }
