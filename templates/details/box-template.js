@@ -1,4 +1,4 @@
-const BoxTemplate = `
+const BoxTemplate = /*html*/`
 <div>
 
 <div v-if="query" class="card-deck">

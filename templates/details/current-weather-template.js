@@ -1,4 +1,4 @@
-const CurrentWeatherTemplate = `
+const CurrentWeatherTemplate = /*html*/`
 <div class="my-3 p-3 bg-white rounded shadow-sm">
     <p v-if="weather">
         In {{weather.name}} today the weather consists of {{weather.weather[0].description}}

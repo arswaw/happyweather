@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 .bg-blue {
-    background-color: #2385e6
+    margin: 0;
+    background-color: #faf9fa;
 }
 
 .connect {
@@ -9,27 +12,236 @@
     border-radius: 100%;
 }
 
+.nav-main {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-auto-rows: auto;
+    grid-gap: 1em;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 4px solid black;
+    background: #4b367c;
+}
+
+.nav-title {
+    color: #d3cae8;
+    text-decoration: none;
+    font-weight: bold;
+    grid-column: 1
+}
+
+.white-nav-text {
+    color: #d3cae8;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h3 {
+    font-family: 'Ubuntu', sans-serif;
+    margin-block-start: 0;
+    text-align: left;
+    margin-block-end: 0;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+button.close {
+    float: right;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    font-size: 19px;
+}
+
+.list-item {
+    list-style-type: none;
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: 50;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.grid-table > span {
+    padding: 8px 4px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* Thanks to Skeleton.css for the great buttons and inputs */
+button {
+    display: inline-block;
+    /* height: 38px; */
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+input {
+    font-family: 'Ubuntu', sans-serif;
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px 16px 8px 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1;
+    grid-auto-rows: 1;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.grid-item {
+    grid-column: 1;
+}
+
+.router-padding {
+    padding: 0px 5px 0px 5px;
+}
+
+/* Home Template */
+
+.home-grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    grid-gap: 1em;
+    align-items: center;
+    text-align: center;
+}
+
+.home-grid-item {
+    /* grid-row: 1; */
+}
+
+/* Home Template */
+
+/* Places Form Grid */
+.places-grid-container {
+    display: grid;
+    grid-template-rows: 5fr;
+    grid-auto-columns: auto;
+    grid-gap: 1em;
+    align-items: center;
+    text-align: left;
+}
+
+/* Places Form Grid */
+
+/* Queries Template */
+
+.queries-grid-container {
+    display: grid;
+    grid-template-rows: 5fr;
+    grid-auto-columns: auto;
+    grid-gap: 1em;
+    align-items: center;
+    text-align: left;
+}
+
+/* Queries Template */
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: right;
+}
+
+.item5 {
+    grid-area: footer;
+}
+
+.grid-container>div {
+    padding: 20px 0;
+}
+
 @media only screen and (min-width: 50em) {
     .weather-width {
         max-width: 90%;
     }
 }
 
+/* Desktop */
 @media all and (min-width: 1025px) {
     .weather-width {
-        margin-left: 20%;   
+        margin-left: 20%;
         max-width: 60%;
+    }
+    .grid-container>div {
+        padding: 0;
+        max-width: 50%;
+        margin-left: 25%;
+    }
+    p {
+        font-size: 18px;
+    }
+    .nav-main {
+        padding: 15px;
     }
 }
 
 .slide-fade-enter-active {
     transition: all .3s ease;
-  }
-  .slide-fade-leave-active {
+}
+
+.slide-fade-leave-active {
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active below version 2.1.8 */
+    {
     transform: translateX(10px);
     opacity: 0;
-  }
+}

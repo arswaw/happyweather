@@ -1,4 +1,4 @@
-const BoxesTemplate = `<section>
+const BoxesTemplate = /*html*/`<section>
 
 <div v-for="(item, index) of grid">
 <transition appear

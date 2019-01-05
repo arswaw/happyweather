@@ -1,4 +1,4 @@
-const DetailsTemplate = `
+const DetailsTemplate = /*html*/`
 <div><br>
     <transition :appear=true name="slide-fade" mode="out-in">
         <router-view

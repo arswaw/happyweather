@@ -1,4 +1,4 @@
-const CollapsePopupTemplate = `
+const CollapsePopupTemplate = /*html*/`
 <transition appear
     name="add-new-detail-row-transition"
     enter-active-class="animated rubberBand"

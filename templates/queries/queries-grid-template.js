@@ -1,18 +1,16 @@
-const QueriesGridTemplate = `
-<div class="media text-muted pt-3">
-                <img v-if="query.predictions.length === 0" src="http://placehold.it/32/FF0000?text=✓" class="mr-2 rounded">
-                <img v-if="query.predictions.length > 0" src="http://placehold.it/32/008000?text=✓" class="mr-2 rounded">
-                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block text-gray-dark">{{query.shortName || query.geographicalAttributes["city-name"]}} - {{query["numberOfPredictedDays"]}} days</strong> 
-                    <ul class="list-group">
-                            <li class="list-group-item">Creator: {{query.requester}}</li>
-                            <li class="list-group-item">Date: {{new Date(query.date).toDateString()}}</li>
-                            <li class="list-group-item">State: {{query.geographicalAttributes["state"]}}</li>
-                            <li class="list-group-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Awaiting"}}</li>
-                            <li class="list-group-item">Accuracy: Collecting Data</li>
-                            <li class="list-group-item"><button v-on:click="sendQueryToParent(index)" class="btn btn-info">Quick View</button></li>
-                            <li class="list-group-item d-none d-sm-block"><button class="btn btn-info" @click="sendQueryToDetails"><router-link to="/details" style="color:white">Detailed View</router-link></button></li>
-                            
+const QueriesGridTemplate = /*html*/`
+<div class="box">
+                <img v-if="query.predictions.length === 0" src="http://placehold.it/32/FF0000?text=✓" class="">
+                <img v-if="query.predictions.length > 0" src="http://placehold.it/32/008000?text=✓" class="">
+                <p class="">
+                    <strong class="">{{query.shortName || query.geographicalAttributes["city-name"]}} - {{query["numberOfPredictedDays"]}} days</strong> 
+                    <ul class="">
+                            <li class="list-item">Creator: {{query.requester}}</li>
+                            <li class="list-item">Date: {{new Date(query.date).toDateString()}}</li>
+                            <li class="list-item">State: {{query.geographicalAttributes["state"]}}</li>
+                            <li class="list-item">Predictions: {{query.predictions.length > 0 ? "Done" : "Awaiting"}}</li>
+                            <li class="list-item">Accuracy: Collecting Data</li><br>
+                            <li class="list-item"><button v-on:click="sendQueryToParent(index)" class="btn btn-info">Quick View</button></li>      
                           </ul>
                 </p>
                 
