@@ -1,8 +1,8 @@
-const MainTemplate = `
-<div>
-<navbar></navbar>
-<div role="main" class="weather-width">
-                <main role="main" class="container">
+const MainTemplate = /*html*/ `
+<div class="grid-container">
+<navbar class="grid-column"></navbar>
+<div role="main" class="grid-column">
+                <main role="main" class="router-padding">
                     <transition :appear=true name="slide-fade" mode="out-in">
                         <router-view></router-view>
                     </transition>
@@ -11,4 +11,6 @@ const MainTemplate = `
         </div>
 `
 
-export { MainTemplate }
+export {
+    MainTemplate
+}

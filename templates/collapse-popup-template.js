@@ -1,4 +1,9 @@
-const CollapsePopupTemplate = `
+const CollapsePopupTemplate = /*html*/`
+<transition appear
+    name="add-new-detail-row-transition"
+    enter-active-class="animated rubberBand"
+    leave-active-class="animated bounceOutRight"
+>
 <div v-if="opened && selectedQuery" class="modal" style="display:block;overflow:overlay" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -68,7 +73,7 @@ const CollapsePopupTemplate = `
                         </div>
                         </div>
                     </div>
-                </div>
+                </div></transition>
 `
 
 export { CollapsePopupTemplate }

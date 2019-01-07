@@ -1,10 +1,15 @@
-const InfoTemplate = `
-<div v-if="show" class="my-3 p-3 rounded">
-                <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <button type="button" @click="show=false" class="close" data-dismiss="modal" aria-label="Close">
+const InfoTemplate = /*html*/`
+<transition appear
+    name="add-new-detail-row-transition"
+    enter-active-class="animated pulse"
+    leave-active-class="animated fadeOut"
+>
+<header v-if="show" class="box">
+                <div>
+                <button style="line-height:20px" type="button" @click="show=false" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-                    <h6 class="border-gray pb-2 mb-0">Introduction</h6>
+                    <h3>Introduction</h3><br>
                     <p>
                         Welcome to Happy Weather! This is a friendly weather prediction 
                         system based on Machine Learning. Enter a location you want to predict
@@ -13,7 +18,8 @@ const InfoTemplate = `
                         days will be collected and will be used to verify the accuracy of the prediction.
                     </p>
                 </div>
-                </div>
+                </header>
+                </transition>
 `
 
 export { InfoTemplate }

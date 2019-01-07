@@ -1,13 +1,8 @@
-const HomeTemplate = `
-<div>
+const HomeTemplate = /*html*/`
+<div class="home-grid-container">
 <info></info>
-<section>
-    <places></places>
-</section>
-
-<section>
-    <queries></queries>
-</section>
+<places></places>
+<queries></queries>
 </div>
 `
 

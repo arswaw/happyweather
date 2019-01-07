@@ -1,9 +1,13 @@
+// State
 import {
     APIURL
 } from '../../globals.js'
+import { GetQueries} from '../../state/getQueries.js'
 
+
+// Components
 import { QueriesTemplate } from '../../templates/queries/queries-template.js'
-import { QueriesGrid } from './queries-grid'
+import { QueriesGrid } from './queries-grid.js'
 import { CollapsePopup } from '../collapse-popup.js'
 
 const Queries = {
@@ -30,32 +34,26 @@ const Queries = {
             showPredicted: false,
             showActual: false,
             selectedQuery: {},
-            modalQuery: {}
+            modalQuery: {},
+            showSpinner: true
         }
     },
     methods: {
         async refresh() {
-            const response = await axios.get(`${APIURL}/query`)
+            this.showSpinner = true
+            const response = await GetQueries().next()
 
-            console.info("response", response)
-
-            if (response.status !== 200) {
-                this.status = "There was an error retrieving queries."
-                setTimeout(() => {
-                    this.status = ""
-                }, 3000)
-            }
-
-            this.queries = await response.data
+            this.queries = response.value
             console.info("queries from queries.js", this.queries)
             this.status = "Refreshed!"
+            this.showSpinner = false
             setTimeout(() => {
                 this.status = ""
             }, 3000)
         },
     },
-    created: function () {
-        this.refresh()
+    created: async function () {
+        await this.refresh()
         this.$root.$on('RefreshQueries', () => {
             this.refresh()
         })
