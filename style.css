@@ -99,7 +99,7 @@ button {
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    background-color: dodgerblue;
+    background-color: deepskyblue; /* #ff00a5 */
     border-radius: 4px;
     border: 1px solid deepskyblue;
     cursor: pointer;
