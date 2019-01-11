@@ -1,6 +1,6 @@
 const QuerySelectTemplate = `
     <transition mode="in-out">
-    <div v-if="showQuerySelect" key="tabular" class="my-3 p-3 bg-white rounded shadow-sm">
+    <div v-if="showQuerySelect" key="tabular" class="box">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -20,7 +20,7 @@ const QuerySelectTemplate = `
             <td @click="sendChoiceToParent(query)"><router-link to="boxes">Go!</router-link></td>
           </tr>
         </tbody>
-        <nav aria-label="Page navigation example">
+        <nav aria-label="">
   <ul v-if="false" class="pagination">
     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
     <li class="page-item"><a class="page-link" href="#">1</a></li>

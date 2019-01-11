@@ -1,10 +1,6 @@
 const CollapsePopupTemplate = /*html*/`
-<transition appear
-    name="add-new-detail-row-transition"
-    enter-active-class="animated rubberBand"
-    leave-active-class="animated bounceOutRight"
->
-<div v-if="opened && selectedQuery" class="modal" style="display:block;overflow:overlay" tabindex="-1" role="dialog">
+
+<dialog id="quickView" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -26,8 +22,8 @@ const CollapsePopupTemplate = /*html*/`
                                     <div v-if="showHistorical" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                             <div class="card-body">
                                                     
-                                                    <ul class="list-group" v-for="his of selectedQuery.historical">
-                                                            <li class="list-group-item list-group-item-secondary">Min: <span style="color:blue">{{his.min}}</span> Max: <span style="color:red">{{his.max}}</span></li>
+                                                    <ul v-for="his of selectedQuery.historical">
+                                                            <li class="list-item">Min: <span style="color:blue">{{his.min}}</span> Max: <span style="color:red">{{his.max}}</span></li>
                                                         </ul>
                                             </div>
                                           </div>
@@ -44,7 +40,7 @@ const CollapsePopupTemplate = /*html*/`
                                                 <div class="card-body">
                                                         
                                                     <ul class="list-group" v-for="pred of selectedQuery.predictions">
-                                                            <li class="list-group-item list-group-item-secondary">Min: <span style="color:blue">{{pred.min}}</span> Max: <span style="color:red">{{pred.max}}</span></li>
+                                                            <li class="list-item">Min: <span style="color:blue">{{pred.min}}</span> Max: <span style="color:red">{{pred.max}}</span></li>
                                                         </ul>
                                                 </div>
                                               </div>
@@ -61,7 +57,7 @@ const CollapsePopupTemplate = /*html*/`
                                                     <div class="card-body">
                                                             
                                                     <ul class="list-group" v-for="act of selectedQuery.actual">
-                                                            <li class="list-group-item list-group-item-secondary">Min: <span style="color:blue">{{act.min}}</span> Max: <span style="color:red">{{act.max}}</span></li>
+                                                            <li class="list-item">Min: <span style="color:blue">{{act.min}}</span> Max: <span style="color:red">{{act.max}}</span></li>
                                                         </ul>
                                                     </div>
                                                   </div>
@@ -73,7 +69,7 @@ const CollapsePopupTemplate = /*html*/`
                         </div>
                         </div>
                     </div>
-                </div></transition>
+                </dialog>
 `
 
 export { CollapsePopupTemplate }

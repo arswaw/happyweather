@@ -5,7 +5,8 @@ const CollapsePopup = {
     template: CollapsePopupTemplate,
     created: function() {
         this.$root.$on('open-popup', () => {
-            this.opened = true
+            const quickView = document.getElementById("quickView")
+            quickView.showModal()
         })
     },
     data: function () {
@@ -38,7 +39,8 @@ const CollapsePopup = {
         },
         sendCloseToParent() {
             this.$root.$emit('close-popup')
-            this.opened = false
+            const quickView = document.getElementById("quickView")
+            quickView.close()
             this.showHistorical = true
             this.showPredicted = false
             this.showActual = false
