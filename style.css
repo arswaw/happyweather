@@ -106,8 +106,10 @@ button {
     box-sizing: border-box;
 }
 
-dialog {
-    width: 85%;
+dialog.modal {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 input {
@@ -156,6 +158,35 @@ input {
 }
 
 /* Home Template */
+
+/* Quick View Modal */
+
+.quick-view-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "All";
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+}
+
+.quick-view-All {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "Title Title Close" "Select Select Select" "List List List";
+    grid-area: quick-view-All;
+}
+
+.quick-view-Title { grid-area: quick-view-Title; }
+
+.quick-view-Close { grid-area: quick-view-Close; }
+
+.quick-view-Select { grid-area: quick-view-Select; }
+
+.quick-view-List { grid-area: quick-view-List; }
+
+/* Quick View Modal */
 
 /* Places Form Grid */
 .places-grid-container {

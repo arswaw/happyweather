@@ -1,4 +1,4 @@
-const APIURL = 'http://18.222.95.139:3000'
+const APIURL = 'https://api.happyweather.info/node'
 
 export {
     APIURL
