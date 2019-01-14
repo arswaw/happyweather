@@ -7,7 +7,7 @@ const GetQueries = async function* () {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    await timeout(2000)
+    //await timeout(2000)
 
     yield response.data
 }
