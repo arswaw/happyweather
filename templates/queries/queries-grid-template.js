@@ -1,7 +1,7 @@
 const QueriesGridTemplate = /*html*/`
 <div class="box">
-                <img v-if="query.predictions.length === 0" src="http://placehold.it/32/FF0000?text=✓" class="">
-                <img v-if="query.predictions.length > 0" src="http://placehold.it/32/008000?text=✓" class="">
+                <img v-if="query.predictions.length === 0" src="https://placehold.it/32/FF0000?text=✓" class="">
+                <img v-if="query.predictions.length > 0" src="https://placehold.it/32/008000?text=✓" class="">
                 <p class="">
                     <strong class="">{{query.shortName || query.geographicalAttributes["city-name"]}} - {{query["numberOfPredictedDays"]}} days</strong> 
                     <ul class="">
