@@ -87,13 +87,18 @@ new Vue({
     'navbar': Navbar
   },
   mounted: function () {
-    setTimeout(() =>
+    this.$root.$on('toast', message => {
+      this.toastMessage = message
+
+      setTimeout(() =>
       this.toastMessage = "",
       3000);
+    })
+    
   },
   data: function () {
     return {
-      toastMessage: "Query sent! Now awaiting prediction."
+      toastMessage: ""
     }
   },
   router,

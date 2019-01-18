@@ -45,11 +45,8 @@ const Queries = {
 
             this.queries = response.value
             console.info("queries from queries.js", this.queries)
-            this.status = "Refreshed!"
+            this.$root.$emit('toast', "Refreshed query list!")
             this.showSpinner = false
-            setTimeout(() => {
-                this.status = ""
-            }, 3000)
         },
     },
     created: async function () {
