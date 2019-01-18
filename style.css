@@ -1,8 +1,10 @@
+/* Thanks to Steve Schoger for design tips throughout. https://twitter.com/i/moments/880688233641848832 */
+
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 .bg-blue {
     margin: 0;
-    background-color: #dcdbdc;
+    background-color: hsl(24, 21%, 93%);
 }
 
 .connect {
@@ -21,9 +23,9 @@
     padding: 15px;
     text-align: center;
     background: #4b367c;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75)
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75)
 }
 
 .nav-title {
@@ -34,11 +36,13 @@
 }
 
 .white-nav-text {
-    color: white;
+    color: hsl(192, 17%, 99%);
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.2em;
     text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
 }
 
 p {
@@ -53,10 +57,13 @@ h3 {
     margin-block-start: 0;
     text-align: left;
     margin-block-end: 0;
+    font-weight: 500;
 }
 
 ul {
     padding-inline-start: 0px;
+    margin-block-end: 0;
+    line-height: 1.5;
 }
 
 button.close {
@@ -67,8 +74,35 @@ button.close {
     font-size: 19px;
 }
 
+span.status-green {
+    font-weight: bolder;
+    color: green;
+}
+
+span.status-red {
+    font-weight: bolder;
+    color: red;
+}
+
 .list-item {
+    font-weight: 400;
     list-style-type: none;
+    color: #586368;
+    font-size: 18px;
+}
+
+p.text {
+    color: hsl(0, 0, 37%);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+p::-moz-selection {
+    background-color: yellow;
+}
+
+p::selection {
+    background-color: yellow;
 }
 
 .grid-table {
@@ -79,14 +113,14 @@ button.close {
     border-right: 1px solid black;
 }
 
-.grid-table > span {
+.grid-table>span {
     padding: 8px 4px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 /* Thanks to Skeleton.css for the great buttons and inputs */
-button {
+button.main {
     display: inline-block;
     /* height: 38px; */
     padding: 0 30px;
@@ -94,41 +128,61 @@ button {
     text-align: center;
     font-size: 11px;
     font-weight: 600;
+    width: 65%;
     line-height: 38px;
     letter-spacing: .1rem;
     text-transform: uppercase;
     text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
     white-space: nowrap;
-    background-color: deepskyblue; /* #ff00a5 */
+    background-color: deepskyblue;
+    /* #ff00a5 */
     border-radius: 4px;
     border: 1px solid deepskyblue;
     cursor: pointer;
     box-sizing: border-box;
 }
 
+button.main:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+}
+
+button.block {
+    width: 100%;
+}
+
 dialog.modal {
     width: 80%;
-    border: 1px solid black;
+    border-top: 4px solid green;
     border-radius: 5px;
+    position: fixed;
+    border: 0;
+    bottom: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 input {
     font-family: 'Ubuntu', sans-serif;
     height: 38px;
     padding: 6px 10px;
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
+    background-color: hsl(210, 9%, 96%);
+    border: 0px solid black;
     border-radius: 4px;
-    box-shadow: none;
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08); */
     box-sizing: border-box;
 }
 
 .box {
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     border-bottom: 4px solid black;
     border-radius: 4px;
     padding: 8px 16px 8px 16px;
+}
+
+.query {
+    border-bottom: 1px solid black;
 }
 
 .grid-container {
@@ -174,17 +228,25 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "Title Title Close" "Select Select Select" "List List List";
+    grid-template-areas: "Title Title Close""Select Select Select""List List List";
     grid-area: quick-view-All;
 }
 
-.quick-view-Title { grid-area: quick-view-Title; }
+.quick-view-Title {
+    grid-area: quick-view-Title;
+}
 
-.quick-view-Close { grid-area: quick-view-Close; }
+.quick-view-Close {
+    grid-area: quick-view-Close;
+}
 
-.quick-view-Select { grid-area: quick-view-Select; }
+.quick-view-Select {
+    grid-area: quick-view-Select;
+}
 
-.quick-view-List { grid-area: quick-view-List; }
+.quick-view-List {
+    grid-area: quick-view-List;
+}
 
 /* Quick View Modal */
 
@@ -212,6 +274,20 @@ input {
 }
 
 /* Queries Template */
+
+.queries-info-green {
+    padding-left: 8px;
+    border: 1px solid black;
+    border-left: 4px solid green;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.queries-info-red {
+    padding-left: 8px;
+    border: 1px solid black;
+    border-left: 4px solid red;
+    border-radius: 0px 4px 4px 0px;
+}
 
 .item1 {
     grid-area: header;
@@ -249,16 +325,92 @@ input {
         margin-left: 20%;
         max-width: 60%;
     }
+
     .grid-container>div {
         padding: 0;
         max-width: 50%;
         margin-left: 25%;
     }
+
     p {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 1.5;
     }
+
     .nav-main {
         padding: 15px 23% 15px 22%;
+    }
+
+    button.main {
+        width: 20%;
+    }
+
+    button.block {
+        width: 100%;
+    }
+
+    dialog.modal {
+        border: 1px solid black;
+        border-top: 4px solid #222098;
+    }
+
+    /* Table */
+
+    table {
+        border: 1px solid black;
+        background-color: white;
+        padding: 15px;
+    }
+
+    th {
+        font-size: 14px;
+        font-weight: semibold;
+        color: #4A4A4A;
+        text-transform: uppercase;
+    }
+
+    tr {
+        padding: 15px;
+        border-top: #E6E6E6;
+        text-align: left;
+        border-left: none;
+        border-right: none;
+    }
+
+    td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #E1E1E1;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+        padding-right: 0;
+    }
+
+    /* Table */
+}
+
+/* Thanks to Geckotang for <dialog> animation
+https://codepen.io/geckotang/post/dialog-with-animation
+*/
+
+dialog[open] {
+    -webkit-animation: show 1s ease normal;
+}
+
+@-webkit-keyframes show {
+    from {
+        transform: translateY(110%);
+    }
+
+    to {
+        transform: translateY(0%);
     }
 }
 
@@ -278,3 +430,43 @@ input {
     transform: translateX(10px);
     opacity: 0;
 }
+
+/* Table */
+
+table {
+    border: 1px solid black;
+    /* padding: 5px; */
+}
+
+th {
+    font-size: 14px;
+    font-weight: semibold;
+    color: #4A4A4A;
+    text-transform: uppercase;
+}
+
+tr {
+    padding: 15px;
+    border-top: #E6E6E6;
+    text-align: left;
+    border-left: none;
+    border-right: none;
+}
+
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+th:first-child,
+td:first-child {
+    padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+/* Table */

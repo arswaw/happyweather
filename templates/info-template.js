@@ -10,7 +10,7 @@ const InfoTemplate = /*html*/`
           <span aria-hidden="true">&times;</span>
         </button>
                     <h3>Introduction</h3><br>
-                    <p>
+                    <p class="text">
                         Welcome to Happy Weather! This is a friendly weather prediction 
                         system based on Machine Learning. Enter a location you want to predict
                         the weather for. In a few minutes your query will display a prediction

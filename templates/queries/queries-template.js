@@ -2,12 +2,10 @@ const QueriesTemplate = /*html*/`
 <transition>
 <div id="queries" v-if="!showSpinner" class="box home-grid-item queries-grid-container">
     <h3>Recent queries</h3>
-    <button v-on:click="refresh">Refresh</button>
+    <button class="main block" v-on:click="refresh">Refresh</button>
     
     <p v-if="status">{{status}}</p>
-    <div v-if="queries" v-for="(query, index) of queries">
-        <queries-grid v-bind:query="query" v-bind:index="index"></queries-grid>
-    </div>
+    <queries-grid :key="query.uuid" v-if="queries" v-bind:query="query" v-for="(query, index) of queries" v-bind:index="index"></queries-grid>
     
     <template v-if="selectedQuery">
         <collapse-popup v-bind:selectedQuery="selectedQuery"></collapse-popup>

@@ -1,7 +1,7 @@
 const QuerySelectTemplate = `
     <transition mode="in-out">
-    <div v-if="showQuerySelect" key="tabular" class="box">
-      <table class="table table-hover">
+    <div v-if="showQuerySelect" key="tabular">
+      <table>
         <thead>
           <tr>
             <th scope="col">#</th>
