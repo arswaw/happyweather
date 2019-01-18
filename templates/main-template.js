@@ -8,6 +8,13 @@ const MainTemplate = /*html*/ `
                     </transition>
                 </main> 
         </div>
+        <transition appear
+        name="add-new-detail-row-transition"
+        enter-active-class="animated bounceInUp"
+        leave-active-class="animated bounceOutDown"
+    >
+        <aside v-if="toastMessage" class="toast">{{toastMessage}}</aside>
+        </transition>
         </div>
 `
 

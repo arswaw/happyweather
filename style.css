@@ -119,6 +119,19 @@ p::selection {
     border-bottom: 1px solid black;
 }
 
+.toast {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: white;
+    padding: 25px;
+    min-width: 200px;
+    text-align: center;
+    border: 2px solid black;
+    border-top: 4px solid green;
+    border-radius: 5px;
+}
+
 /* Thanks to Skeleton.css for the great buttons and inputs */
 button.main {
     display: inline-block;

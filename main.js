@@ -33,45 +33,45 @@ Vue.use(VueRouter)
 // Router
 const router = new VueRouter({
   routes: [{
-      path: '/',
-      component: Home,
-      name: 'Home Page',
+    path: '/',
+    component: Home,
+    name: 'Home Page',
+    meta: {
+      title: 'Home'
+    },
+  },
+  {
+    path: '/details',
+    component: Details,
+    name: 'Details Page',
+    meta: {
+      title: 'Details'
+    },
+    children: [{
+      path: 'boxes',
+      name: 'box-comparison',
+      component: Boxes,
       meta: {
-        title: 'Home'
+        title: 'Box Comparison'
       },
     },
     {
-      path: '/details',
-      component: Details,
-      name: 'Details Page',
+      path: 'select',
+      name: 'query-select',
+      component: QuerySelect,
       meta: {
-        title: 'Details'
-      },
-      children: [{
-          path: 'boxes',
-          name: 'box-comparison',
-          component: Boxes,
-          meta: {
-            title: 'Box Comparison'
-          },
-        },
-        {
-          path: 'select',
-          name: 'query-select',
-          component: QuerySelect,
-          meta: {
-            title: 'Query Select'
-          },
-        }
-      ]
-    },
-    {
-      path: '*',
-      component: NotFound,
-      meta: {
-        title: 'Page not Found'
+        title: 'Query Select'
       },
     }
+    ]
+  },
+  {
+    path: '*',
+    component: NotFound,
+    meta: {
+      title: 'Page not Found'
+    },
+  }
   ]
 })
 
@@ -85,6 +85,16 @@ new Vue({
   el: '#app',
   components: {
     'navbar': Navbar
+  },
+  mounted: function () {
+    setTimeout(() =>
+      this.toastMessage = "",
+      3000);
+  },
+  data: function () {
+    return {
+      toastMessage: "Query sent! Now awaiting prediction."
+    }
   },
   router,
   template: MainTemplate
