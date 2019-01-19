@@ -40,6 +40,7 @@ const Queries = {
     },
     methods: {
         async refresh() {
+            this.queries = []
             this.showSpinner = true
             const response = await GetQueries().next()
 
