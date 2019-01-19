@@ -69,40 +69,7 @@ const Places = {
       this.showLocationBanner = false
       this.showPredictButton = true
     }
-  },
-  watch: {
-    async place(value) {
-      if (!value) {
-        this.showLocationBanner = false
-        this.showTypeBanner = false
-        this.showSelectLocationButton = false
-        return
-      }
-      const response = await axios.get(`${APIURL}/text?place=${value}`)
-
-      if (response.status !== 200) {
-        this.errorText = "There was an issue with retrieving locations"
-        setTimeout(() => {
-          this.errorText = ""
-        }, 3000)
-      }
-
-      this.places = await response.json()
-
-      if (this.places.status === "ZERO_RESULTS") {
-        this.showLocationBanner = false
-        this.showTypeBanner = true
-        this.showSelectLocationButton = false
-      }
-      if (this.places.status === "OK") {
-        this.showLocationBanner = true
-        this.showTypeBanner = false,
-          this.showSelectLocationButton = true
-      }
-
-      console.info("places", this.places)
-    }
-  },
+  }
 }
 
 export { Places }
