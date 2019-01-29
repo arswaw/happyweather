@@ -7,3 +7,6 @@ vue.js
 router.js
 .idea
 .vscode
+animate.min.css
+axios.min.js
+vue-router.js
