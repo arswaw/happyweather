@@ -6,7 +6,7 @@ import { Places } from './places.js'
 import { Info } from './info.js'
 import { CurrentWeather } from './details/current-weather.js';
 
-import { isLocalhost } from '../../globals.js'
+import { isLocalhost } from '../globals.js'
 
 const Home = {
     template: HomeTemplate,
