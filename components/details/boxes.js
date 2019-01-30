@@ -12,6 +12,7 @@ const Boxes = {
     created: function() {
         console.info("query in boxes", this.query)
         if (!isLocalhost) {
+            this.grid = []
             this.grid.push(this.query)
         }
     },
