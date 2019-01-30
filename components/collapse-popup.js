@@ -5,8 +5,7 @@ const CollapsePopup = {
     template: CollapsePopupTemplate,
     created: function() {
         this.$root.$on('open-popup', () => {
-            const quickView = document.getElementById("quickView")
-            quickView.showModal()
+            this.opened = true
         })
     },
     data: function () {

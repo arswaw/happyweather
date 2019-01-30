@@ -75,8 +75,7 @@
     background: white;
     align-items: center;
     padding: 9px 5px 7px 16px;
-    border: 1px solid black;
-
+    border: 2px solid black;
 }
 
 .sub-nav-text {
@@ -110,7 +109,7 @@ button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 span.status-green {
@@ -213,13 +212,15 @@ button.block {
     width: 100%;
 }
 
-dialog.modal {
-    width: 80%;
+div.modal {
+    width: 90%;
     border-top: 4px solid green;
     border-radius: 5px;
     position: fixed;
     border: 0;
     bottom: 0;
+    background-color: white;
+    padding: 5px;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
@@ -228,7 +229,7 @@ input {
     height: 38px;
     padding: 6px 10px;
     background-color: hsl(210, 9%, 96%);
-    border: 0px solid black;
+    border: 2px solid black;
     border-radius: 4px;
     /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08); */
     box-sizing: border-box;
@@ -338,7 +339,7 @@ input {
 
 .queries-info-green {
     padding-left: 8px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-left: 4px solid green;
     border-radius: 0px 4px 4px 0px;
 }
@@ -414,9 +415,11 @@ input {
         width: 100%;
     }
 
-    dialog.modal {
+    div.modal {
         border: 1px solid black;
         border-top: 4px solid #222098;
+        width: 34%;
+        left: 16%;
     }
 
     /* Table */
@@ -461,11 +464,7 @@ input {
     /* Table */
 }
 
-/* Thanks to Geckotang for <dialog> animation
-https://codepen.io/geckotang/post/dialog-with-animation
-*/
-
-dialog[open] {
+div.modal {
     -webkit-animation: show 1s ease normal;
     animation: show 1s ease normal;
 }
