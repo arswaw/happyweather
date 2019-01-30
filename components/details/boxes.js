@@ -1,6 +1,7 @@
 import { BoxesTemplate } from '../../templates/details/boxes-template.js'
 
 import { Box } from './box.js'
+import { BoxesInfo } from './boxes-info.js'
 
 const Boxes = {
     props: ['query'],
@@ -15,7 +16,8 @@ const Boxes = {
         }
     },
     components: {
-        'box': Box
+        'box': Box,
+        'boxes-info': BoxesInfo
     },
     methods: {
         testGenerateNewQuery: function () {

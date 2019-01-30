@@ -1,16 +1,15 @@
 const BoxTemplate = /*html*/`
-<div>
+<section>
+<div v-if="query">
+    <h4>{{query.shortName}} - <em>{{query.requester}}</em> - {{new Date(query.date).toDateString()}}</h4>
+        <div>
+        
+        <span class="status-green" v-if="query && query.predictions.length>0">Predictions available.</span>
+        <span class="status-red" v-else>Awaiting predictions.</span>
+    </div>
+    </div>
 
-<div v-if="query" class="card-deck">
-<div v-bind:class="['card', 'text-white', 'mb-3', cardStyles[index]]" style="max-width: 18rem;">
-    <div class="card-header">{{query.shortName}}</div>
-        <div class="card-body">
-        <h5 class="card-title">{{query.requester}}</h5>
-        <p class="card-text">Awaiting real-world weather.</p>
-        Created {{new Date(query.date).toDateString()}}
-    </div>
-    </div>
-    <div class="card text-center card bg-light mb-3" style="max-width: 18rem;">
+    <div>
         <div class="card-header">First Comparison</div>
         <div class="card-body">
         
@@ -53,8 +52,8 @@ const BoxTemplate = /*html*/`
             </ul><br>
             <!--<button @click="resetBox('second')" v-if="choices[1].length>1" class="btn btn-primary btn-block">Back</button>-->
     </div>
-    </div></div>
     </div>
+    </section>
 `
 
 export { BoxTemplate }

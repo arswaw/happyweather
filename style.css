@@ -110,7 +110,7 @@ button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    font-size: 19px;
+    font-size: 14px;
 }
 
 span.status-green {
@@ -142,6 +142,15 @@ p::-moz-selection {
 
 p::selection {
     background-color: yellow;
+}
+
+select {
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
 }
 
 .grid-table {
