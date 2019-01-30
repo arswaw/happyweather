@@ -1,5 +1,5 @@
 const CollapsePopupTemplate = /*html*/`
-<div id="quickView" v-if="opened" class="modal" tabindex="-1">
+<div id="quickView" @click="opened=!opened" v-if="opened" class="modal" tabindex="-1">
 <div class="quick-view-grid-container">
 <div class="all">
 
@@ -10,7 +10,7 @@ const CollapsePopupTemplate = /*html*/`
   </div>
   <div class="quick-view-Close">
   <button type="button" class="close" style="color:black" v-on:click="sendCloseToParent" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&minus;</span>
+        <span aria-hidden="true">&times;</span>
     </button>
 </div>
   <div class="quick-view-Select">

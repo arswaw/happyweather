@@ -38,8 +38,6 @@ const CollapsePopup = {
         },
         sendCloseToParent() {
             this.$root.$emit('close-popup')
-            const quickView = document.getElementById("quickView")
-            quickView.close()
             this.showHistorical = true
             this.showPredicted = false
             this.showActual = false

@@ -104,6 +104,12 @@ ul {
     line-height: 1.5;
 }
 
+li.query-small {
+    border-style: solid;
+    border-width: 2px 0px 2px 0px;
+    list-style-type: none;
+}
+
 button.close {
     float: right;
     padding: 0;
@@ -179,6 +185,14 @@ select {
     border-radius: 5px;
 }
 
+.app-level-alert {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 16px;
+    background-color: red;
+    margin-bottom: -0.59%;
+}
+
 /* Thanks to Skeleton.css for the great buttons and inputs */
 button.main {
     display: inline-block;
@@ -215,12 +229,13 @@ button.block {
 div.modal {
     width: 90%;
     border-top: 4px solid green;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     position: fixed;
     border: 0;
     bottom: 0;
     background-color: white;
     padding: 5px;
+    z-index: 100;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 

@@ -30,6 +30,8 @@ import {
 import { CurrentWeather } from './components/details/current-weather.js';
 import { Queries } from './components/queries/queries.js';
 
+import { isLocalhost } from './globals.js'
+
 Vue.use(VueRouter)
 
 // Router
@@ -108,7 +110,8 @@ new Vue({
   },
   data: function () {
     return {
-      toastMessage: ""
+      toastMessage: "",
+      isLocalhost: isLocalhost
     }
   },
   router,

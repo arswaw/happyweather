@@ -1,5 +1,6 @@
 const MainTemplate = /*html*/ `
 <div class="grid-container">
+<aside v-if="isLocalhost" class="app-level-alert">Windchill is dangerously low! Stay inside!</aside>
 <navbar class="grid-column"></navbar>
 <div role="main" class="grid-column">
                 <main role="main" class="router-padding">
