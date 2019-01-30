@@ -17,13 +17,15 @@ const AddQuery = {
 
             this.grid = response.value
             this.showLoader = false
+            this.loaded = true
         },
     },
     data: function() {
         return {
             opened: false,
             grid: [],
-            showLoader: false
+            showLoader: false,
+            loaded: false
         }
     },
     created: async function() {
