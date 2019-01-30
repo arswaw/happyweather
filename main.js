@@ -27,6 +27,8 @@ import {
 import {
   QuerySelect
 } from './components/details/query-select.js'
+import { CurrentWeather } from './components/details/current-weather.js';
+import { Queries } from './components/queries/queries.js';
 
 Vue.use(VueRouter)
 
@@ -58,9 +60,17 @@ const router = new VueRouter({
     {
       path: 'select',
       name: 'query-select',
-      component: QuerySelect,
+      component: Queries,
       meta: {
         title: 'Query Select'
+      },
+    },
+    {
+      path: 'current',
+      name: 'current-weather',
+      component: CurrentWeather,
+      meta: {
+        title: 'Current Weather'
       },
     }
     ]

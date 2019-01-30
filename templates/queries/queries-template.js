@@ -1,10 +1,17 @@
 const QueriesTemplate = /*html*/`
+<div>
+<div v-if="isDetails" id="queries-select-info" class="box bottom-margin">
+    <p class="text">Search for your query in the box below. Then select "Compare."</p>
+    <br>
+    <input id="filterQueries" placeholder="Filter by requester" type="text">
+</div>
 <transition>
+
 <div id="queries" class="box home-grid-item queries-grid-container">
-    <h3>Recent queries</h3>
+    <h3 v-if="!isDetails">Recent Queries</h3>
     <button class="main block" v-on:click="refresh">Refresh</button>
     
-    <queries-grid :key="query.uuid" v-if="!showSpinner && queries" v-bind:query="query" v-for="(query, index) of queries" v-bind:index="index"></queries-grid>
+    <queries-grid :isDetails="isDetails" :key="query.uuid" v-if="!showSpinner && queries" v-bind:query="query" v-for="(query, index) of queries" v-bind:index="index"></queries-grid>
     <div class="box home-grid-item" v-if="showSpinner">Loading...</div>
     <template v-if="selectedQuery">
         <collapse-popup v-bind:selectedQuery="selectedQuery"></collapse-popup>
@@ -14,5 +21,6 @@ const QueriesTemplate = /*html*/`
     </small>
 </div>
 </transition>
+</div>
 `
 export { QueriesTemplate }

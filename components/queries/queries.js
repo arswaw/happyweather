@@ -1,9 +1,5 @@
 // State
-import {
-    APIURL
-} from '../../globals.js'
 import { GetQueries} from '../../state/getQueries.js'
-
 
 // Components
 import { QueriesTemplate } from '../../templates/queries/queries-template.js'
@@ -11,6 +7,7 @@ import { QueriesGrid } from './queries-grid.js'
 import { CollapsePopup } from '../collapse-popup.js'
 
 const Queries = {
+    props: ['isDetails'],
     components: {
         'queries-grid': QueriesGrid,
         'collapse-popup': CollapsePopup
@@ -45,7 +42,7 @@ const Queries = {
             const response = await GetQueries().next()
 
             this.queries = response.value
-            console.info("queries from queries.js", this.queries)
+
             this.$root.$emit('toast', "Refreshed query list!")
             this.showSpinner = false
         },

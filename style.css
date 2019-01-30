@@ -14,6 +14,27 @@
     border-radius: 100%;
 }
 
+/* Thanks to Blowsie - https://stackoverflow.com/a/4407335/3938113 */
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.bottom-margin {
+    margin-bottom: 8px;
+}
+
 .nav-main {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
@@ -55,7 +76,7 @@
     align-items: center;
     padding: 9px 5px 7px 16px;
     border: 1px solid black;
-    
+
 }
 
 .sub-nav-text {
@@ -155,7 +176,7 @@ button.main {
     display: inline-block;
     /* height: 38px; */
     padding: 0 30px;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -164,12 +185,13 @@ button.main {
     letter-spacing: .1rem;
     text-transform: uppercase;
     text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20);
+    /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20); */
     white-space: nowrap;
-    background-color: deepskyblue;
+    background-color: ghostwhite;
     /* #ff00a5 */
-    border-radius: 4px;
-    border: 1px solid deepskyblue;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid black;
+    border-bottom: 2px solid;
     cursor: pointer;
     box-sizing: border-box;
 }
@@ -338,10 +360,6 @@ input {
 
 .item5 {
     grid-area: footer;
-}
-
-.grid-container>div {
-    padding: 20px 0;
 }
 
 @media only screen and (min-width: 50em) {
