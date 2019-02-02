@@ -39,7 +39,7 @@ const Queries = {
         async refresh() {
             this.queries = []
             this.showSpinner = true
-            const response = await GetQueries().next()
+            const response = await GetQueries(5).next()
 
             this.queries = response.value
 

@@ -3,7 +3,7 @@ const AddQueryTemplate = /*html*/`
     <div class="box bottom-margin">
         <button class="main" style="width:100%" @click="openQueries">Add another query</button>
     </div>
-    <div v-if="loaded" class="modal" @click="opened=!opened">
+    <div v-if="loaded" class="modal">
         <span v-if="!opened">Queries</span>
         <button style="line-height:20px" type="button" @click="opened=!opened" class="close" aria-label="Close">
             <span aria-hidden="true">&minus;</span>

@@ -34,6 +34,22 @@ import { isLocalhost } from './globals.js'
 
 Vue.use(VueRouter)
 
+window.onscroll = e => {
+  const subnav = document.getElementById("subnav")
+  const pageIsAtTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+
+  if (subnav && pageIsAtTop !== 0) {
+    subnav.style.width = "18%"
+    subnav.style.borderRadius = "5px 0px 0px 5px"
+  }
+  else if (subnav && pageIsAtTop === 0) {
+    subnav.style.width = "50%"
+    subnav.style.borderRadius = "0px 0px 0px 5px"
+  }
+
+  
+}
+
 // Router
 const router = new VueRouter({
   routes: [{
@@ -89,6 +105,10 @@ const router = new VueRouter({
 
 // Change the title based on the page name
 router.beforeEach((to, from, next) => {
+  const subnav = document.getElementById("subnav")
+  if (subnav) {
+    subnav.style.display = "none"
+  }
   document.title = `${to.meta.title} | Happy Weather`
   next()
 })
