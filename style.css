@@ -330,10 +330,7 @@ input {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1;
-    grid-auto-rows: 1;
     grid-gap: 10px;
-    align-items: center;
 }
 
 .grid-item {
@@ -474,6 +471,10 @@ input {
     p {
         font-size: 16px;
         line-height: 1.5;
+    }
+
+    .router-padding {
+        padding: 0;
     }
 
     .nav-main {
