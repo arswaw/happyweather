@@ -294,10 +294,11 @@ button.block {
 
 div.modal {
     width: 90%;
+    border: 1px solid;
     border-top: 4px solid green;
     border-radius: 5px 5px 0px 0px;
     position: fixed;
-    border: 0;
+    left: 3%;
     bottom: 0;
     background-color: white;
     padding: 5px;
