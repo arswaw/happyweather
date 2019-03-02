@@ -24,9 +24,7 @@ import {
 import {
   Boxes
 } from './components/details/boxes.js'
-import {
-  QuerySelect
-} from './components/details/query-select.js'
+
 import { CurrentWeather } from './components/details/current-weather.js';
 import { Queries } from './components/queries/queries.js';
 

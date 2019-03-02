@@ -1,9 +1,10 @@
 const QueriesTemplate = /*html*/`
 <div>
 <div v-if="isDetails" id="queries-select-info" class="box bottom-margin">
-    <p class="text">Search for your query in the box below. Then select "Compare."</p>
+    <p class="text">Search for your query in the box below. Press "Enter."</p>
+    <p class="text">Then select "Compare."</p>
     <br>
-    <input id="filterQueries" placeholder="Filter by requester" type="text">
+    <input v-model="filterByRequester" @change="refresh" id="filterQueries" placeholder="Filter by requester" type="text">
 </div>
 <transition>
 

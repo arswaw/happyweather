@@ -1,7 +1,7 @@
 import { APIURL } from '../globals.js'
 
-async function* GetQueries (ttk) {
-    const response = await axios.get(APIURL)
+async function* GetQueries (filter) {
+    const response = await axios.get(`${APIURL}/query?filter=${filter}`)
 
     yield response.data
 }

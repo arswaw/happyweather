@@ -32,14 +32,15 @@ const Queries = {
             showActual: false,
             selectedQuery: {},
             modalQuery: {},
-            showSpinner: true
+            showSpinner: true,
+            filterByRequester: ""
         }
     },
     methods: {
         async refresh() {
             this.queries = []
             this.showSpinner = true
-            const response = await GetQueries(5).next()
+            const response = await GetQueries(this.filterByRequester).next()
 
             this.queries = response.value
 
