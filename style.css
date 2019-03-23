@@ -175,6 +175,10 @@ li.query-small {
     list-style-type: none;
 }
 
+li.list-group-item {
+    list-style-type: none;
+}
+
 button.close {
     float: right;
     padding: 0;

@@ -6,8 +6,12 @@ const CharacterTemplate = /*html*/ `
         leave-active-class="animated slideOutDown">
 
         <nav v-if="showMenu" class="character">
-            <button  class="main block character-nav-text"><a class="nav-title" @click="showMenu = !showMenu" href="/#/character/gamestate">Game State</a></button>
-            <button href="#" class="main block character-nav-text">Character</button>
+            <button  class="main block character-nav-text">
+                <a class="nav-title" @click="showMenu = !showMenu" href="#/character/gamestate">Game State</a>
+            </button>
+            <button href="#" class="main block character-nav-text">
+                <a class="nav-title" @click="showMenu = !showMenu" href="#/character/charactermain">Character</a>
+            </button>
             <button href="#" class="main block character-nav-text">Stats</button>
             <button href="#" class="main block character-nav-text">Attacks</button>
             <button href="#" class="main block character-nav-text">Personality</button>
@@ -21,8 +25,10 @@ const CharacterTemplate = /*html*/ `
             <span v-else>Show Menu</span>
         </button>
 
+        <hr>
+
         <main class="character-grid">
-            <router-view state="gameState"></router-view>
+            <router-view v-bind:state="gameState" v-bind:bio="charBio"></router-view>
         </main>
     </div>
 `

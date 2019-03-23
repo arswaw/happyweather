@@ -31,6 +31,7 @@ import { Queries } from './components/queries/queries.js';
 import { isLocalhost } from './globals.js'
 import { Character } from './components/character/character.js';
 import { GameState } from './components/character/views/game-state.js';
+import { CharacterMain } from './components/character/views/character-main.js';
 
 Vue.use(VueRouter)
 
@@ -74,6 +75,14 @@ const router = new VueRouter({
         props: true,
         meta: {
           title: 'Game State'
+        }
+      },
+      {
+        path: "charactermain",
+        component: CharacterMain,
+        props: true,
+        meta: {
+          title: 'Character'
         }
       }
     ]

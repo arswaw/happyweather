@@ -6,16 +6,16 @@ const Character = {
         return {
             showMenu: false,
             charBio: {
-                class: "",
+                class: "Sorcerer",
                 level: 1,
-                background: "",
-                playerName: "",
-                faction: "",
-                race: "",
-                alignment: "",
-                experiencePoints: 0,
+                background: "None",
+                playerName: "Alex",
+                faction: "Alliance",
+                race: "Human (Alternate)",
+                alignment: "Chaotic Good",
+                experiencePoints: 10000,
                 DCINumber: 0,
-                characterName: ""
+                characterName: "Arswaw"
             },
             inspiration: "",
             proficiencyBonus: 0,
