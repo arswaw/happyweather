@@ -292,6 +292,36 @@ button.block {
     width: 100%;
 }
 
+/* Character CSS */
+nav.character {
+    display: grid;
+    left: 7px;
+    bottom: 0;
+    background-color: white;
+    padding: 15px;
+    width: 85%;
+    height: 73%;
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid black;
+    grid-gap: 20px;
+    position: fixed;
+    grid-template-columns: 1;
+    grid-template-rows: 7;
+}
+
+a.character-nav-text {
+    padding: 15px;
+    line-height: 14px;
+    grid-row: 1;
+}
+
+main.character-grid {
+    display: grid;
+}
+
+/* Character CSS */
+
+
 div.modal {
     width: 90%;
     border: 1px solid;

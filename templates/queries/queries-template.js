@@ -20,6 +20,9 @@ const QueriesTemplate = /*html*/`
     <small class="d-block text-right mt-3">
         <a v-if="!showSpinner" href="#">Back to top</a>
     </small>
+    <small>
+        <a href="#/character">Characters</a>
+    </small>
 </div>
 </transition>
 </div>
