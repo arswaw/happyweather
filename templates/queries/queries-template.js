@@ -4,7 +4,7 @@ const QueriesTemplate = /*html*/`
     <p class="text">Search for your query in the box below. Press "Enter."</p>
     <p class="text">Then select "Compare."</p>
     <br>
-    <input v-model="filterByRequester" @change="refresh" id="filterQueries" placeholder="Filter by requester" type="text">
+    <input v-model="filterByRequester" @change="refresh" id="filterQueries" placeholder="Enter your name" type="text">
 </div>
 <transition>
 

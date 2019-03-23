@@ -9,7 +9,7 @@ const AddQueryTemplate = /*html*/`
             <span aria-hidden="true">&minus;</span>
         </button>
         <div v-if="opened">
-            <input @change="refresh" v-model="filterByRequester" type="text" placeholder="Filter by requester">
+            <input @change="refresh" v-model="filterByRequester" type="text" placeholder="Enter your name">
             <ul v-for="item of grid.slice(0, 5)">
                 <li class="query-small">
                     {{item.requester}}<br>
