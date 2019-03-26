@@ -12,7 +12,9 @@ const CharacterTemplate = /*html*/ `
             <button href="#" class="main block character-nav-text">
                 <a class="nav-title" @click="showMenu = !showMenu" href="#/character/charactermain">Character</a>
             </button>
-            <button href="#" class="main block character-nav-text">Stats</button>
+            <button href="#" class="main block character-nav-text">
+            <a class="nav-title" @click="showMenu = !showMenu" href="#/character/statspage">Stats</a>
+            </button>
             <button href="#" class="main block character-nav-text">Attacks</button>
             <button href="#" class="main block character-nav-text">Personality</button>
             <button href="#" class="main block character-nav-text">Features</button>

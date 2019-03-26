@@ -32,6 +32,7 @@ import { isLocalhost } from './globals.js'
 import { Character } from './components/character/character.js';
 import { GameState } from './components/character/views/game-state.js';
 import { CharacterMain } from './components/character/views/character-main.js';
+import { Stats } from './components/character/views/stats.js';
 
 Vue.use(VueRouter)
 
@@ -48,7 +49,7 @@ window.onscroll = e => {
     subnav.style.borderRadius = "0px 0px 0px 5px"
   }
 
-  
+
 }
 
 // Router
@@ -85,6 +86,15 @@ const router = new VueRouter({
         name: 'Character Main Route',
         meta: {
           title: 'Character'
+        }
+      },
+      {
+        path: "statspage",
+        component: Stats,
+        props: true,
+        name: "Stats Route",
+        meta: {
+          title: "Stats Page"
         }
       }
     ]
@@ -152,10 +162,10 @@ new Vue({
       this.toastMessage = message
 
       setTimeout(() =>
-      this.toastMessage = "",
-      3000);
+        this.toastMessage = "",
+        3000);
     })
-    
+
   },
   data: function () {
     return {
