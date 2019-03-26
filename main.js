@@ -73,6 +73,7 @@ const router = new VueRouter({
         path: "gamestate",
         component: GameState,
         props: true,
+        name: 'Game State Route',
         meta: {
           title: 'Game State'
         }
@@ -81,6 +82,7 @@ const router = new VueRouter({
         path: "charactermain",
         component: CharacterMain,
         props: true,
+        name: 'Character Main Route',
         meta: {
           title: 'Character'
         }
