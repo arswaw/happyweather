@@ -8,7 +8,7 @@ const GameStateTemplate = /*html*/`
             <li class="list-item">Maximum Hit Points: {{state.hitPointMaximum}}</li>
             <li class="list-item">Current Hit Points: {{state.currentHitPoints}}</li>
             <li class="list-item">Hit Dice: {{state.hitDice}}</li>
-        <ul>
+        </ul>
 
         <h6>Death Saves</h6>
         Successes: {{state.deathSaves.successes}}
