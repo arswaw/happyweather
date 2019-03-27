@@ -48,15 +48,15 @@ const Character = {
                 survival: { proficient: false, plus: 0, augmentedBy: "wisdom"}
             },
             baseStats: {
-                strength: { base: 0, modifier: 0 },
-                dexterity: { base: 0, modifier: 0 },
-                constitution: { base: 0, modifier: 0 },
-                intelligence: { base: 0, modifier: 0 },
-                wisdom: { base: 0, modifier: 0 },
-                charisma: { base: 0, modifier: 0 }
+                strength: { base: 0, modifier: 0, label: "Strength" },
+                dexterity: { base: 0, modifier: 0, label: "Dexterity" },
+                constitution: { base: 0, modifier: 0, label: "Constitution" },
+                intelligence: { base: 0, modifier: 0, label: "Intelligence" },
+                wisdom: { base: 0, modifier: 0, label: "Wisdom" },
+                charisma: { base: 0, modifier: 0, label: "Charisma" }
             },
             gameState: {
-                armorClass: 0,
+                armorClass: 1,
                 initiative: 0,
                 speed: 0,
                 hitPointMaximum: 0,

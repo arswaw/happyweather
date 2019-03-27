@@ -30,7 +30,11 @@ const CharacterTemplate = /*html*/ `
         <hr>
 
         <main class="character-grid">
-            <router-view v-bind:state="gameState" v-bind:bio="charBio"></router-view>
+            <router-view 
+                v-bind:state="gameState" 
+                v-bind:bio="charBio"
+                v-bind:stats="baseStats">
+            </router-view>
         </main>
     </div>
 `

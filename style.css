@@ -201,6 +201,12 @@ li.health {
     height: 100px;
 }
 
+ul.stats {
+    display: grid;
+    grid-gap: 80px;
+    grid-template-columns: 50px 50px;
+}
+
 /* /Character */
 
 li.query-small {
