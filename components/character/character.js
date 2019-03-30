@@ -4,6 +4,8 @@ const Character = {
     template: CharacterTemplate,
     data: function() {
         return {
+            showWizard: true,
+            currentStep: {count: 2, description: "Setting your stats"},
             showMenu: false,
             charBio: {
                 class: "Sorcerer",
@@ -48,12 +50,12 @@ const Character = {
                 survival: { proficient: false, plus: 0, augmentedBy: "wisdom"}
             },
             baseStats: {
-                strength: { base: 0, modifier: 0, label: "Strength" },
-                dexterity: { base: 0, modifier: 0, label: "Dexterity" },
-                constitution: { base: 0, modifier: 0, label: "Constitution" },
-                intelligence: { base: 0, modifier: 0, label: "Intelligence" },
-                wisdom: { base: 0, modifier: 0, label: "Wisdom" },
-                charisma: { base: 0, modifier: 0, label: "Charisma" }
+                strength: { base: 14, modifier: 3, label: "Strength" },
+                dexterity: { base: 16, modifier: 1, label: "Dexterity" },
+                constitution: { base: 8, modifier: 2, label: "Constitution" },
+                intelligence: { base: 12, modifier: 4, label: "Intelligence" },
+                wisdom: { base: 10, modifier: 1, label: "Wisdom" },
+                charisma: { base: 24, modifier: 2, label: "Charisma" }
             },
             gameState: {
                 armorClass: 1,

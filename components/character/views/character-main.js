@@ -2,6 +2,11 @@ import { CharacterMainTemplate } from "../../../templates/character/views/charac
 
 const CharacterMain = {
     props: ['bio'],
+    data: function() {
+        return {
+            readonly: false
+        }
+    },
     template: CharacterMainTemplate
 }
 

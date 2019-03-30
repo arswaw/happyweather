@@ -33,6 +33,11 @@ import { Character } from './components/character/character.js';
 import { GameState } from './components/character/views/game-state.js';
 import { CharacterMain } from './components/character/views/character-main.js';
 import { Stats } from './components/character/views/stats.js';
+import { Attacks } from './components/character/views/attacks.js';
+import { Personality } from './components/character/views/personality.js';
+import { GameFeatures } from './components/character/views/game-features.js';
+import { Equipment } from './components/character/views/equipment.js'
+import { CreatorMenu } from './components/character/creator-menu.js';
 
 Vue.use(VueRouter)
 
@@ -95,6 +100,51 @@ const router = new VueRouter({
         name: "Stats Route",
         meta: {
           title: "Stats Page"
+        }
+      },
+      {
+        path: "attacks",
+        component: Attacks,
+        props: true,
+        name: "Attacks Route",
+        meta: {
+          title: "Attacks Page"
+        }
+      },
+      {
+        path: "personality",
+        component: Personality,
+        props: true,
+        name: "Personality Route",
+        meta: {
+          title: "Personality Page"
+        }
+      },
+      {
+        path: "features",
+        component: GameFeatures,
+        props: true,
+        name: "Game Features Route",
+        meta: {
+          title: "Game Features"
+        }
+      },
+      {
+        path: "equipment",
+        component: Equipment,
+        props: true,
+        name: "Equipment Route",
+        meta: {
+          title: "Equipment"
+        }
+      },
+      {
+        path: "creatormenu",
+        component: CreatorMenu,
+        props: true,
+        name: "Creator Menu Route",
+        meta: {
+          title: "Creator Menu"
         }
       }
     ]

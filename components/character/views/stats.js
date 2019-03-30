@@ -2,7 +2,18 @@ import { StatsTemplate } from "../../../templates/character/views/stats-template
 
 const Stats = {
     props: ['stats'],
-    template: StatsTemplate
+    template: StatsTemplate,
+    data: function() {
+        return {
+            colors: ['red', 'blue', 'cornflowerblue', 'green', 'purple', 'cyan'],
+            readonly: false
+        }
+    },
+    methods: {
+        getRandomColor() {
+            return this.colors[Math.floor(Math.random() * 5)]
+        }
+    }
 }
 
 export { Stats }

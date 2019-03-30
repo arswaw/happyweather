@@ -203,8 +203,25 @@ li.health {
 
 ul.stats {
     display: grid;
-    grid-gap: 80px;
     grid-template-columns: 50px 50px;
+}
+
+li.statbox {
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    border: 2px solid black;
+    width: 92%;
+    color: white;
+}
+
+.wizard {
+    margin-bottom: 2%;
+    background-color: white;
+    border: 2px solid blue;
+    width: 89%;
+    padding: 15px;
+    border-radius: 4px;
 }
 
 /* /Character */
@@ -262,9 +279,18 @@ select {
     height: 38px;
     padding: 6px 10px;
     background-color: #fff;
-    border: 1px solid #D1D1D1;
+    border: 2px solid black;
     border-radius: 4px;
     box-shadow: none;
+}
+
+li.form {
+    margin-bottom: 2%;
+}
+
+textarea {
+    border: 2px solid black;
+    border-radius: 4px;
 }
 
 .grid-table {

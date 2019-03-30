@@ -21,7 +21,7 @@ const QueriesTemplate = /*html*/`
         <a v-if="!showSpinner" href="#">Back to top</a>
     </small>
     <small>
-        <a href="#/character">Characters</a>
+        <a href="#/character/creatormenu">Characters</a>
     </small>
 </div>
 </transition>
