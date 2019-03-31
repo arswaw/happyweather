@@ -40,7 +40,7 @@ const CharacterTemplate = /*html*/ `
         <div class="wizard" v-if="showWizard">
             <h4>You are on Step {{currentStep.count}} - {{currentStep.description}}</h4>
             <button @click="advanceWizard" class="main block">Next</button>
-            <button v-if="currentStep.count > 1" class="main block secondary">Previous</button>
+            <button @click="reverseWizard" v-if="currentStep.count > 1" class="main block secondary">Previous</button>
             <button @click="startWizard(false)" class="main block danger">Exit</button>
         </div>
 

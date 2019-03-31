@@ -1,7 +1,7 @@
 import { StatsTemplate } from "../../../templates/character/views/stats-template.js";
 
 const Stats = {
-    props: ['stats'],
+    props: ['stats', 'showWizard'],
     template: StatsTemplate,
     data: function() {
         return {

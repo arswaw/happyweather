@@ -27,11 +27,21 @@ const Character = {
         },
         advanceWizard() {
             this.currentStep.count = this.currentStep.count + 1
+            this.currentStep.progress = this.currentStep.progress + 15
 
             const nextStep = this.steps[this.currentStep.count]
 
             this.currentStep.description = nextStep.description
             window.location.href = `#/character/${nextStep.url}`
+        },
+        reverseWizard() {
+            const nextStep = this.steps[this.currentStep.count - 1]
+
+            this.currentStep.progress = this.currentStep.progress - 15
+
+            this.currentStep.description = nextStep.description
+            window.location.href = `#/character/${nextStep.url}`
+            this.currentStep.count = this.currentStep.count - 1
         }
     },
     components: {
@@ -42,7 +52,11 @@ const Character = {
             steps: [
                 { description: "Not started", url: 'none' },
                 { description: "Basic Information", url: 'charactermain' },
-                { description: "Player Stats", url: 'statspage' }
+                { description: "Player Stats", url: 'statspage' },
+                { description: "Player Attacks", url: 'attacks'},
+                { description: "Personality", url: 'personality'},
+                { description: "Features", url: 'features'},
+                { description: "Equipment", url: 'equipment'}
             ],
             showWizard: false,
             currentStep: { count: 0, description: "Not creating a character.", progress: 10 },
