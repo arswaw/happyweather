@@ -3,9 +3,13 @@ import { Progress } from "./progress.js";
 
 const Character = {
     template: CharacterTemplate,
-    mounted: function() {
+    mounted: function () {
         this.$root.$on('showWizard', choice => {
             this.startWizard(choice)
+        })
+        this.$root.$on('returnToWizard', () => {
+            this.showWizard = true
+            window.location.href = `#/character/${this.steps[this.currentStep.count].url}`
         })
     },
     methods: {
@@ -16,15 +20,32 @@ const Character = {
                 this.currentStep.description = "Basic Information"
                 window.location.href = '#/character/charactermain'
             }
+            else {
+                this.showWizard = false
+                window.location.href = '#/character/creatormenu'
+            }
+        },
+        advanceWizard() {
+            this.currentStep.count = this.currentStep.count + 1
+
+            const nextStep = this.steps[this.currentStep.count]
+
+            this.currentStep.description = nextStep.description
+            window.location.href = `#/character/${nextStep.url}`
         }
     },
     components: {
         'progress-bar': Progress
     },
-    data: function() {
+    data: function () {
         return {
+            steps: [
+                { description: "Not started", url: 'none' },
+                { description: "Basic Information", url: 'charactermain' },
+                { description: "Player Stats", url: 'statspage' }
+            ],
             showWizard: false,
-            currentStep: {count: 0, description: "Not creating a character.", progress: 10},
+            currentStep: { count: 0, description: "Not creating a character.", progress: 10 },
             showMenu: false,
             characters: [],
             charBio: {
@@ -50,24 +71,24 @@ const Character = {
                 charisma: { proficient: false, plus: 0 }
             },
             skills: {
-                acrobatics: { proficient: false, plus: 0, augmentedBy: "dexterity"},
-                animalHandling: { proficient: false, plus: 0, augmentedBy: "wisdom"},
-                arcana: { proficient: false, plus: 0, augmentedBy: "int"},
-                athletics: { proficient: false, plus: 0, augmentedBy: "strength"},
-                deception: { proficient: false, plus: 0, augmentedBy: "charisma"},
-                history: { proficient: false, plus: 0, augmentedBy: "intelligence"},
-                insight: { proficient: false, plus: 0, augmentedBy: "wisdom"},
-                intimidation: { proficient: false, plus: 0, augmentedBy: "charisma"},
-                investigation: { proficient: false, plus: 0, augmentedBy: "intelligence"},
-                medicine: { proficient: false, plus: 0, augmentedBy: "wisdom"},
-                nature: { proficient: false, plus: 0, augmentedBy: "intelligence"},
-                perception: { proficient: false, plus: 0, augmentedBy: "wisdom"},
-                performance: { proficient: false, plus: 0, augmentedBy: "charisma"},
-                persuasion: { proficient: false, plus: 0, augmentedBy: "charisma"},
-                religion: { proficient: false, plus: 0, augmentedBy: "intelligence"},
-                sleightOfHand: { proficient: false, plus: 0, augmentedBy: "dexterity"},
-                stealth: { proficient: false, plus: 0, augmentedBy: "dexterity"},
-                survival: { proficient: false, plus: 0, augmentedBy: "wisdom"}
+                acrobatics: { proficient: false, plus: 0, augmentedBy: "dexterity" },
+                animalHandling: { proficient: false, plus: 0, augmentedBy: "wisdom" },
+                arcana: { proficient: false, plus: 0, augmentedBy: "int" },
+                athletics: { proficient: false, plus: 0, augmentedBy: "strength" },
+                deception: { proficient: false, plus: 0, augmentedBy: "charisma" },
+                history: { proficient: false, plus: 0, augmentedBy: "intelligence" },
+                insight: { proficient: false, plus: 0, augmentedBy: "wisdom" },
+                intimidation: { proficient: false, plus: 0, augmentedBy: "charisma" },
+                investigation: { proficient: false, plus: 0, augmentedBy: "intelligence" },
+                medicine: { proficient: false, plus: 0, augmentedBy: "wisdom" },
+                nature: { proficient: false, plus: 0, augmentedBy: "intelligence" },
+                perception: { proficient: false, plus: 0, augmentedBy: "wisdom" },
+                performance: { proficient: false, plus: 0, augmentedBy: "charisma" },
+                persuasion: { proficient: false, plus: 0, augmentedBy: "charisma" },
+                religion: { proficient: false, plus: 0, augmentedBy: "intelligence" },
+                sleightOfHand: { proficient: false, plus: 0, augmentedBy: "dexterity" },
+                stealth: { proficient: false, plus: 0, augmentedBy: "dexterity" },
+                survival: { proficient: false, plus: 0, augmentedBy: "wisdom" }
             },
             baseStats: {
                 strength: { base: 14, modifier: 3, label: "Strength" },

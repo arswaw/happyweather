@@ -291,6 +291,7 @@ li.form {
 textarea {
     border: 2px solid black;
     border-radius: 4px;
+    width: 100%;
 }
 
 .grid-table {

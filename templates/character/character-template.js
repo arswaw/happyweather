@@ -39,9 +39,9 @@ const CharacterTemplate = /*html*/ `
 
         <div class="wizard" v-if="showWizard">
             <h4>You are on Step {{currentStep.count}} - {{currentStep.description}}</h4>
-            <button class="main block">Next</button>
+            <button @click="advanceWizard" class="main block">Next</button>
             <button v-if="currentStep.count > 1" class="main block secondary">Previous</button>
-            <button class="main block danger">Exit</button>
+            <button @click="startWizard(false)" class="main block danger">Exit</button>
         </div>
 
         <progress v-bind:value="currentStep.progress" max="100" v-if="showWizard"></progress>
@@ -50,6 +50,7 @@ const CharacterTemplate = /*html*/ `
             <router-view 
                 v-bind:state="gameState" 
                 v-bind:bio="charBio"
+                v-bind:currentStep="currentStep"
                 v-bind:showWizard="showWizard"
                 v-bind:stats="baseStats">
             </router-view>

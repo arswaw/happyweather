@@ -9,6 +9,7 @@ const CreatorMenuTemplate =/*html*/`
         on the button below</p><br>
 
         <button class="main block" @click="startWizard">Create a new character!</button>
+        <button v-if="currentStep.count > 0" class="main block secondary" @click="returnToWizard">Resume</button>
         <h4>OR</h4>
         <a href="#/character/characterselect">Select an existing character!</a>
     </div>
