@@ -1,7 +1,7 @@
 const CharacterMainTemplate = /*html*/`
-    <div class="box">
+    <div class="box" style="margin-bottom:8%">
         <h4>Character Bio</h4>
-        <ul class="list-group" v-if="readonly">
+        <ul class="list-group" v-if="!showWizard">
             <li class="list-group-item">Class: {{bio.class}}</li>
             <li class="list-group-item">Level: {{bio.level}}</li>
             <li class="list-group-item">Background: {{bio.background}}</li>

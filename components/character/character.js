@@ -1,12 +1,32 @@
 import { CharacterTemplate } from "../../templates/character/character-template.js";
+import { Progress } from "./progress.js";
 
 const Character = {
     template: CharacterTemplate,
+    mounted: function() {
+        this.$root.$on('showWizard', choice => {
+            this.startWizard(choice)
+        })
+    },
+    methods: {
+        startWizard(choice) {
+            if (choice) {
+                this.showWizard = true
+                this.currentStep.count = 1
+                this.currentStep.description = "Basic Information"
+                window.location.href = '#/character/charactermain'
+            }
+        }
+    },
+    components: {
+        'progress-bar': Progress
+    },
     data: function() {
         return {
-            showWizard: true,
-            currentStep: {count: 2, description: "Setting your stats"},
+            showWizard: false,
+            currentStep: {count: 0, description: "Not creating a character.", progress: 10},
             showMenu: false,
+            characters: [],
             charBio: {
                 class: "Sorcerer",
                 level: 1,

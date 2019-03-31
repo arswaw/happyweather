@@ -38,6 +38,7 @@ import { Personality } from './components/character/views/personality.js';
 import { GameFeatures } from './components/character/views/game-features.js';
 import { Equipment } from './components/character/views/equipment.js'
 import { CreatorMenu } from './components/character/creator-menu.js';
+import { CharacterSelect } from './components/character/character-select.js';
 
 Vue.use(VueRouter)
 
@@ -145,6 +146,15 @@ const router = new VueRouter({
         name: "Creator Menu Route",
         meta: {
           title: "Creator Menu"
+        }
+      },
+      {
+        path: "characterselect",
+        component: CharacterSelect,
+        props: true,
+        name: "Character Select Route",
+        meta: {
+          title: "Character Select Menu"
         }
       }
     ]

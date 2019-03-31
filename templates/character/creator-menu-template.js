@@ -8,7 +8,9 @@ const CreatorMenuTemplate =/*html*/`
         <p>You can access the character creator by pressing
         on the button below</p><br>
 
-        <button class="main block">Create a new character!</button>
+        <button class="main block" @click="startWizard">Create a new character!</button>
+        <h4>OR</h4>
+        <a href="#/character/characterselect">Select an existing character!</a>
     </div>
 `
 
