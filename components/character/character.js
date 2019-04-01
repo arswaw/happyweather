@@ -17,6 +17,7 @@ const Character = {
             if (choice) {
                 this.showWizard = true
                 this.currentStep.count = 1
+                this.currentStep.progress = 10
                 this.currentStep.description = "Basic Information"
                 window.location.href = '#/character/charactermain'
             }
