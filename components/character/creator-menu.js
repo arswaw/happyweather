@@ -1,17 +1,28 @@
 import { CreatorMenuTemplate } from "../../templates/character/creator-menu-template.js";
 
 const CreatorMenu = {
-    props: ['showWizard', 'currentStep'],
+    props: ['showWizard', 'currentStep', 'characterLoaded'],
     template: CreatorMenuTemplate,
     mounted: function() {
         this.$root.$emit('showWizard', false)
     },
+    data: function() {
+        return {
+            characterId: ""
+        }
+    },
     methods: {
-        startWizard() {
-            this.$root.$emit('showWizard', true)
+        startWizard(choice) {
+            this.$root.$emit('showWizard', choice)
+        },
+        stopWizard() {
+            this.$root.$emit('stopWizard')
         },
         returnToWizard() {
             this.$root.$emit('returnToWizard')
+        },
+        sendIdToCharacter() {
+            this.$root.$emit('retrieveCharacter', this.characterId)
         }
     }
 }

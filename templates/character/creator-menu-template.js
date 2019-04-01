@@ -10,8 +10,13 @@ const CreatorMenuTemplate =/*html*/`
 
         <button class="main block" @click="startWizard">Create a new character!</button>
         <button v-if="currentStep.count > 0" class="main block secondary" @click="returnToWizard">Resume</button>
+        <button v-if="currentStep.count > 0" class="main block danger" @click="stopWizard">Cancel</button>
         <h4>OR</h4>
-        <a href="#/character/characterselect">Select an existing character!</a>
+        <p v-if="characterLoaded">Change the currently loaded character.</p>
+        <p v-else>Select an existing character by entering in the id you were provided.</p><br>
+        <input v-model="characterId" type="text" style="width: 100%">
+        <button v-if="characterLoaded" @click="sendIdToCharacter" class="main block">Change Character</button>
+        <button v-else @click="sendIdToCharacter" class="main block">Load Character</button>
     </div>
 `
 

@@ -5,7 +5,7 @@ const CharacterTemplate = /*html*/ `
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutDown">
 
-        <nav v-if="showMenu" class="character">
+        <nav style="z-index:10" v-if="showMenu" class="character">
             <button  class="main block character-nav-text">
                 <a class="nav-title" @click="showMenu = !showMenu" href="#/character/gamestate">Game State</a>
             </button>
@@ -30,10 +30,12 @@ const CharacterTemplate = /*html*/ `
         </nav>
         </transition>
         
-        <button v-if="!showWizard && showMenu" class="main block" @click="showMenu = !showMenu">
+        <button v-if="showMenuButton" class="main block" @click="showMenu = !showMenu">
             <span v-if="showMenu">Hide Menu</span>
             <span v-else>Show Menu</span>
         </button>
+
+        <button @click="returnToCreatorMenu" v-if="showMenuButton && !showWizard" class="main block secondary">Return</button>
 
         <hr v-if="showMenu">
 
@@ -49,11 +51,12 @@ const CharacterTemplate = /*html*/ `
 
         <main class="character-grid">
             <router-view 
-                v-bind:state="gameState" 
-                v-bind:bio="charBio"
+                v-bind:state="character.gameState" 
+                v-bind:bio="character.charBio"
                 v-bind:currentStep="currentStep"
                 v-bind:showWizard="showWizard"
-                v-bind:stats="baseStats">
+                v-bind:characterLoaded="characterLoaded"
+                v-bind:stats="character.baseStats">
             </router-view>
         </main>
     </div>
