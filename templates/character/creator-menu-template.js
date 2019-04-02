@@ -15,8 +15,12 @@ const CreatorMenuTemplate =/*html*/`
         <p v-if="characterLoaded">Change the currently loaded character.</p>
         <p v-else>Select an existing character by entering in the id you were provided.</p><br>
         <input v-model="characterId" type="text" style="width: 100%">
-        <button v-if="characterLoaded" @click="sendIdToCharacter" class="main block">Change Character</button>
-        <button v-else @click="sendIdToCharacter" class="main block">Load Character</button>
+        <button v-if="characterLoaded" @click="sendIdToCharacter" class="main block">
+            {{isLoading ? "Loading" : "Change Character"}}
+        </button>
+        <button v-else @click="sendIdToCharacter" class="main block">
+            {{isLoading ? "Loading" : "Load Character"}}
+        </button>
     </div>
 `
 

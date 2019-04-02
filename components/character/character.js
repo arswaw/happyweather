@@ -16,6 +16,7 @@ const Character = {
             window.location.href = `#/character/${this.steps[this.currentStep.count].url}`
         })
         this.$root.$on('retrieveCharacter', async id => {
+            this.isLoading = true
             const response = await GetCharacter(id)
 
             console.info("the response", response)
@@ -30,8 +31,10 @@ const Character = {
                 this.showWizard = false
                 this.$root.$emit('toast', "Character loaded! Use the menu to view.")
                 this.character = character
+                this.isLoading = false
             }
             else {
+                this.isLoading = false
                 this.$root.$emit('toast', "Couldn't find a character with that id.")
             }
         })
@@ -97,6 +100,7 @@ const Character = {
                 { description: "Equipment", url: 'equipment' }
             ],
             showWizard: false,
+            isLoading: false,
             characterLoaded: false,
             currentStep: { count: 0, description: "Not creating a character.", progress: 10 },
             showMenu: false,

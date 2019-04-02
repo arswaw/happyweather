@@ -55,6 +55,7 @@ const CharacterTemplate = /*html*/ `
                 v-bind:bio="character.charBio"
                 v-bind:currentStep="currentStep"
                 v-bind:showWizard="showWizard"
+                v-bind:isLoading="isLoading"
                 v-bind:characterLoaded="characterLoaded"
                 v-bind:stats="character.baseStats">
             </router-view>

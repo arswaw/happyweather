@@ -1,7 +1,7 @@
 import { CreatorMenuTemplate } from "../../templates/character/creator-menu-template.js";
 
 const CreatorMenu = {
-    props: ['showWizard', 'currentStep', 'characterLoaded'],
+    props: ['showWizard', 'currentStep', 'characterLoaded', 'isLoading'],
     template: CreatorMenuTemplate,
     mounted: function() {
         this.$root.$emit('showWizard', false)
