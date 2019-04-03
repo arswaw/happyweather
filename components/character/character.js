@@ -93,6 +93,7 @@ const Character = {
             steps: [
                 { description: "Not started", url: 'none' },
                 { description: "Basic Information", url: 'charactermain' },
+                { description: "Game State", url: 'gamestate'},
                 { description: "Player Stats", url: 'statspage' },
                 { description: "Player Attacks", url: 'attacks' },
                 { description: "Personality", url: 'personality' },

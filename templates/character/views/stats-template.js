@@ -1,6 +1,6 @@
 const StatsTemplate =/*html*/
 `
-<div class="box" style="margin-bottom:8%">
+<div class="box game-view" style="margin-bottom:8%">
     <h3>Stats</h3>
     <ul class="list-group" v-if="!showWizard">
         <li class="list-item statbox" v-bind:style="{ backgroundColor: getRandomColor() }" v-for="stat in stats">   

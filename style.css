@@ -406,6 +406,10 @@ main.character-grid {
     display: grid;
 }
 
+.game-view {
+    margin-bottom: 8%;
+}
+
 /* Character CSS */
 
 

@@ -1,5 +1,5 @@
 const GameStateTemplate = /*html*/`
-    <div class="box">
+    <div class="box game-view" v-if="!showWizard">
         <h4>Game State</h4>
         <ul class="list-group">
             <li class="list-item list-color health">
@@ -18,6 +18,42 @@ const GameStateTemplate = /*html*/`
         <h6>Death Saves</h6>
         Successes: {{state.deathSaves.successes}}
         Failures: {{state.deathSaves.failures}}
+    </div>
+    <div class="box game-view" v-else>
+        <h4>Game State</h4>
+        <ul class="list-group">
+            <li class="list-item">Armor Class</li>
+            <li class="list-item">
+                <input type="number" v-model="state.armorClass">
+            </li>
+            <li class="list-item">Initiative</li>
+            <li class="list-item">
+                <input type="number" v-model="state.initiative">
+            </li>
+            <li class="list-item">Speed</li>
+            <li class="list-item">
+                <input type="number" v-model="state.speed">
+            </li>
+            <li class="list-item">Maximum Hit Points</li>
+            <li class="list-item">
+                <input type="number" v-model="state.hitPointMaximum">
+            </li>
+            <li class="list-item">Hit Dice</li>
+            <li class="list-item">
+                <input type="number" v-model="state.hitDice">
+            </li>
+            <li class="list-item">
+                <h4>Death Saves</h4>
+            </li>
+            <li class="list-item">Successes</li>
+            <li class="list-item">
+                <input type="number" v-model="state.deathSaves.successes">
+            </li>
+            <li class="list-item">Failures</li>
+            <li class="list-item">
+                <input type="number" v-model="state.deathSaves.failures">
+            </li>
+        </ul>
     </div>
 `
 
