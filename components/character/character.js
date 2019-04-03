@@ -178,12 +178,21 @@ const Character = {
                 attacksAndSpellcasting: {
                     spells: [
                         {
-                            name: "",
-                            attackBonus: 0,
-                            damageType: ""
+                            name: "Fireball",
+                            attackBonus: 4,
+                            damageType: "Fire"
+                        },
+                        {
+                            name: "Frostbolt",
+                            attackBonus: 4,
+                            damageType: "Frost"
                         }
                     ],
-                    list: []
+                    list: [
+                        "Spell1",
+                        "Spell2",
+                        "Spell3"
+                    ]
                 },
                 passiveWisdomPerception: 0,
                 otherProficienciesAndLanguages: [],

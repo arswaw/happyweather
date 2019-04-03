@@ -42,17 +42,6 @@ const GameStateTemplate = /*html*/`
             <li class="list-item">
                 <input type="number" v-model="state.hitDice">
             </li>
-            <li class="list-item">
-                <h4>Death Saves</h4>
-            </li>
-            <li class="list-item">Successes</li>
-            <li class="list-item">
-                <input type="number" v-model="state.deathSaves.successes">
-            </li>
-            <li class="list-item">Failures</li>
-            <li class="list-item">
-                <input type="number" v-model="state.deathSaves.failures">
-            </li>
         </ul>
     </div>
 `

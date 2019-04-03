@@ -224,6 +224,34 @@ li.statbox {
     border-radius: 4px;
 }
 
+li.spell-list-grid {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 4%;
+}
+
+li.spell-list {
+    padding: 5px;
+    margin-bottom: 2%;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: white;
+}
+
+li.attack-list-grid {
+    display: grid;
+    grid-template-columns: 45% 45%;
+}
+
+li.attack-list {
+    color: white;
+    padding: 5px;
+    grid-column-gap: 6px;
+    border: 2px solid black;
+    margin-bottom: 1%;
+    border-radius: 4px;
+}
+
 /* /Character */
 
 li.query-small {

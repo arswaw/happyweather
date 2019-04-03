@@ -54,6 +54,7 @@ const CharacterTemplate = /*html*/ `
                 v-bind:state="character.gameState" 
                 v-bind:bio="character.charBio"
                 v-bind:currentStep="currentStep"
+                v-bind:attacks="character.attacksAndSpellcasting"
                 v-bind:showWizard="showWizard"
                 v-bind:isLoading="isLoading"
                 v-bind:characterLoaded="characterLoaded"
