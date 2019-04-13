@@ -3,10 +3,10 @@ import { CreatorMenuTemplate } from "../../templates/character/creator-menu-temp
 const CreatorMenu = {
     props: ['showWizard', 'currentStep', 'characterLoaded', 'isLoading'],
     template: CreatorMenuTemplate,
-    mounted: function() {
+    mounted: function () {
         this.$root.$emit('showWizard', false)
     },
-    data: function() {
+    data: function () {
         return {
             characterId: ""
         }
@@ -22,7 +22,12 @@ const CreatorMenu = {
             this.$root.$emit('returnToWizard')
         },
         sendIdToCharacter() {
-            this.$root.$emit('retrieveCharacter', this.characterId)
+            if (!this.characterId) {
+                this.$root.$emit('toast', "Enter a character ID")
+            }
+            else {
+                this.$root.$emit('retrieveCharacter', this.characterId)
+            }
         }
     }
 }

@@ -40,9 +40,13 @@ const Queries = {
         async refresh() {
             this.queries = []
             this.showSpinner = true
-            const response = await GetQueries(this.filterByRequester).next()
+            const response = await GetQueries(this.filterByRequester)
 
-            this.queries = response.value
+            if (!this.queries) {
+                return
+            }
+
+            this.queries = response
 
             this.$root.$emit('toast', "Refreshed query list!")
             this.showSpinner = false

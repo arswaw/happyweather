@@ -1,6 +1,6 @@
 import { isLocalhost } from './globals.js'
 
-import Vue from './vue.js'
+import Vue from './vue.min.js'
 
 import { MainTemplate } from './templates/main-template.js'
 import Navbar from './components/navbar.js'

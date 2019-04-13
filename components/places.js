@@ -33,21 +33,27 @@ const Places = {
       this.errorText = ""
 
       try {
-        const response = await axios.post(`${APIURL}/query`, JSON.stringify({
-          date: new Date(),
-          city: this.places.results[0].formatted_address,
-          shortName: this.places.results[0].name,
-          coords: {
-            "type": "Point",
-            "coordinates": [
-              this.places.results[0].geometry.location.lng,
-              this.places.results[0].geometry.location.lat,
-            ],
-            "state": "IN"
-          },
-          requester: this.requester,
-          placeID: this.places.results[0].place_id
-        })
+        const response = await fetch(`${APIURL}/query`, {
+          method: 'POST',
+          body: JSON.stringify({
+            date: new Date(),
+            city: this.places.results[0].formatted_address,
+            shortName: this.places.results[0].name,
+            coords: {
+              "type": "Point",
+              "coordinates": [
+                this.places.results[0].geometry.location.lng,
+                this.places.results[0].geometry.location.lat,
+              ],
+              "state": "IN"
+            },
+            requester: this.requester,
+            placeID: this.places.results[0].place_id
+          }),
+          headers:{
+            'Content-Type': 'application/json'
+          }
+        }
         )
 
         if (response.status === 200) {

@@ -12,7 +12,7 @@ const QuerySelect = {
         }
     },
     mounted: async function() {
-        const response = await GetQueries(5).next()
+        const response = await GetQueries(5)
 
         this.queries = response.value.slice(0, 4)
 

@@ -15,7 +15,7 @@ const CreatorMenuTemplate =/*html*/`
         <h4>OR</h4>
         
         <p v-if="characterLoaded">Change the currently loaded character.</p>
-        <p v-else>Select an existing character by entering in the id you were provided.</p><br>
+        <p v-else>Select an existing character by entering in the id you were provided if you created a character.</p><br>
         
         <input v-model="characterId" type="text" style="width: 100%;margin-bottom:2%">
         

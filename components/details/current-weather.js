@@ -57,16 +57,16 @@ const CurrentWeather = {
     methods: {
         getWeather: async function () {
             try {
-                const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=46545&APPID=2f69a3fc1f1d2658ba2a8143a779f7e5`)
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=46545&APPID=2f69a3fc1f1d2658ba2a8143a779f7e5`)
 
-                if (response.status !== 200) {
+                if (!response) {
                     this.status = "There was an error retrieving weather data."
                     setTimeout(() => {
                         this.status = ""
                     }, 3000)
                 }
 
-                this.weather = await response.data
+                this.weather = response.json()
                 console.info("weather from current-weather.js", this.weather)
                 this.status = "Refreshed!"
                 setTimeout(() => {

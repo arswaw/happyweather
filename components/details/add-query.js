@@ -13,7 +13,7 @@ const AddQuery = {
         async refresh() {
             this.grid = []
             this.showLoader = true
-            const response = await GetQueries(this.filterByRequester).next()
+            const response = await GetQueries(this.filterByRequester)
 
             this.grid = response.value
             this.showLoader = false
