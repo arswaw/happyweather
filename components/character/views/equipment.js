@@ -4,4 +4,4 @@ const Equipment = {
     template: EquipmentTemplate
 }
 
-export { Equipment }
+export default Equipment

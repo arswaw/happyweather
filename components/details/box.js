@@ -46,6 +46,4 @@ const Box = {
     }
 }
 
-export {
-    Box
-}
+export default Box

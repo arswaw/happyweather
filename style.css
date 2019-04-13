@@ -219,6 +219,7 @@ li.statbox {
     margin-bottom: 2%;
     background-color: white;
     border: 2px solid blue;
+    border-bottom: 4px solid blue;
     width: 89%;
     padding: 15px;
     border-radius: 4px;

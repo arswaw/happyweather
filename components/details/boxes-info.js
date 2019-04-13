@@ -9,4 +9,4 @@ const BoxesInfo = {
     }
 }
 
-export { BoxesInfo }
+export default BoxesInfo

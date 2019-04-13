@@ -72,4 +72,4 @@ const Places = {
   }
 }
 
-export { Places }
+export default Places

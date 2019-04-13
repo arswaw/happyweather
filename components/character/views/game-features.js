@@ -4,4 +4,4 @@ const GameFeatures = {
     template: GameFeaturesTemplate
 }
 
-export { GameFeatures }
+export default GameFeatures

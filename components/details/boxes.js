@@ -1,8 +1,8 @@
 import { BoxesTemplate } from '../../templates/details/boxes-template.js'
 
-import { Box } from './box.js'
-import { BoxesInfo } from './boxes-info.js'
-import { AddQuery } from './add-query.js';
+import Box  from './box.js'
+import BoxesInfo from './boxes-info.js'
+import AddQuery from './add-query.js';
 
 import { isLocalhost } from '../../globals.js'
 
@@ -152,4 +152,4 @@ const Boxes = {
     }
 }
 
-export { Boxes }
+export default Boxes

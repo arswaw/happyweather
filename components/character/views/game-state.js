@@ -5,4 +5,4 @@ const GameState = {
     template: GameStateTemplate
 }
 
-export { GameState }
+export default GameState

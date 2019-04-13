@@ -27,4 +27,4 @@ const CreatorMenu = {
     }
 }
 
-export { CreatorMenu }
+export default CreatorMenu

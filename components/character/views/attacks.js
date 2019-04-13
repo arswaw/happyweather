@@ -15,4 +15,4 @@ const Attacks = {
     }
 }
 
-export { Attacks }
+export default Attacks

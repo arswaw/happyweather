@@ -4,4 +4,4 @@ const NotFound = {
     template: NotFoundTemplate
 }
 
-export { NotFound }
+export default NotFound

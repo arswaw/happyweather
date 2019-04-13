@@ -1,47 +1,13 @@
-// Add Vue globals.
+import { isLocalhost } from './globals.js'
+
 import Vue from './vue.js'
 
-// ES6 Component Imports
-import {
-  Home
-} from './components/home.js'
-import {
-  Navbar
-} from './components/navbar.js'
-import {
-  NotFound
-} from './components/not-found.js'
-import {
-  Details
-} from './components/details/details.js'
-
-// ES6 Template Imports
-import {
-  MainTemplate
-} from './templates/main-template.js'
-
-// Child Imports
-import {
-  Boxes
-} from './components/details/boxes.js'
-
-import { CurrentWeather } from './components/details/current-weather.js';
-import { Queries } from './components/queries/queries.js';
-
-import { isLocalhost } from './globals.js'
-import { Character } from './components/character/character.js';
-import { GameState } from './components/character/views/game-state.js';
-import { CharacterMain } from './components/character/views/character-main.js';
-import { Stats } from './components/character/views/stats.js';
-import { Attacks } from './components/character/views/attacks.js';
-import { Personality } from './components/character/views/personality.js';
-import { GameFeatures } from './components/character/views/game-features.js';
-import { Equipment } from './components/character/views/equipment.js'
-import { CreatorMenu } from './components/character/creator-menu.js';
+import { MainTemplate } from './templates/main-template.js'
+import Navbar from './components/navbar.js'
 
 Vue.use(VueRouter)
 
-window.onscroll = e => {
+window.onscroll = () => {
   const subnav = document.getElementById("subnav")
   const pageIsAtTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
@@ -53,15 +19,13 @@ window.onscroll = e => {
     subnav.style.width = "50%"
     subnav.style.borderRadius = "0px 0px 0px 5px"
   }
-
-
 }
 
 // Router
 const router = new VueRouter({
   routes: [{
     path: '/',
-    component: Home,
+    component: () => import('./components/home.js'),
     name: 'Home Page',
     meta: {
       title: 'Home'
@@ -69,7 +33,7 @@ const router = new VueRouter({
   },
   {
     path: '/character',
-    component: Character,
+    component: () => import('./components/character/character.js'),
     name: 'Characters Page',
     meta: {
       title: 'Characters'
@@ -77,7 +41,7 @@ const router = new VueRouter({
     children: [
       {
         path: "gamestate",
-        component: GameState,
+        component: () => import('./components/character/views/game-state.js'),
         props: true,
         name: 'Game State Route',
         meta: {
@@ -86,7 +50,7 @@ const router = new VueRouter({
       },
       {
         path: "charactermain",
-        component: CharacterMain,
+        component: () => import('./components/character/views/character-main.js'),
         props: true,
         name: 'Character Main Route',
         meta: {
@@ -95,7 +59,7 @@ const router = new VueRouter({
       },
       {
         path: "statspage",
-        component: Stats,
+        component: () => import('./components/character/views/stats.js'),
         props: true,
         name: "Stats Route",
         meta: {
@@ -104,7 +68,7 @@ const router = new VueRouter({
       },
       {
         path: "attacks",
-        component: Attacks,
+        component: () => import('./components/character/views/attacks.js'),
         props: true,
         name: "Attacks Route",
         meta: {
@@ -113,7 +77,7 @@ const router = new VueRouter({
       },
       {
         path: "personality",
-        component: Personality,
+        component: () => import('./components/character/views/personality.js'),
         props: true,
         name: "Personality Route",
         meta: {
@@ -122,7 +86,7 @@ const router = new VueRouter({
       },
       {
         path: "features",
-        component: GameFeatures,
+        component: () => import('./components/character/views/game-features.js'),
         props: true,
         name: "Game Features Route",
         meta: {
@@ -131,7 +95,7 @@ const router = new VueRouter({
       },
       {
         path: "equipment",
-        component: Equipment,
+        component: () => import('./components/character/views/equipment.js'),
         props: true,
         name: "Equipment Route",
         meta: {
@@ -140,7 +104,7 @@ const router = new VueRouter({
       },
       {
         path: "creatormenu",
-        component: CreatorMenu,
+        component: () => import('./components/character/creator-menu.js'),
         props: true,
         name: "Creator Menu Route",
         meta: {
@@ -151,7 +115,7 @@ const router = new VueRouter({
   },
   {
     path: '/details',
-    component: Details,
+    component: () => import('./components/details/details.js'),
     name: 'Details Page',
     meta: {
       title: 'Details'
@@ -159,7 +123,7 @@ const router = new VueRouter({
     children: [{
       path: 'boxes',
       name: 'box-comparison',
-      component: Boxes,
+      component: () => import('./components/details/boxes.js'),
       meta: {
         title: 'Box Comparison'
       },
@@ -167,7 +131,7 @@ const router = new VueRouter({
     {
       path: 'select',
       name: 'query-select',
-      component: Queries,
+      component: () => import('./components/queries/queries.js'),
       meta: {
         title: 'Query Select'
       },
@@ -175,7 +139,7 @@ const router = new VueRouter({
     {
       path: 'current',
       name: 'current-weather',
-      component: CurrentWeather,
+      component: () => import('./components/details/current-weather.js'),
       meta: {
         title: 'Current Weather'
       },
@@ -184,7 +148,7 @@ const router = new VueRouter({
   },
   {
     path: '*',
-    component: NotFound,
+    component: () => import('./components/not-found.js'),
     meta: {
       title: 'Page not Found'
     },

@@ -16,4 +16,4 @@ const Stats = {
     }
 }
 
-export { Stats }
+export default Stats

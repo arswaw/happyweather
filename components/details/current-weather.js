@@ -84,4 +84,4 @@ const CurrentWeather = {
     }
 }
 
-export { CurrentWeather }
+export default CurrentWeather

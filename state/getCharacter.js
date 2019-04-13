@@ -6,4 +6,4 @@ async function GetCharacter (id) {
     return response.data
 }
 
-export { GetCharacter }
+export default GetCharacter

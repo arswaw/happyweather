@@ -8,10 +8,6 @@ const CreatorMenuTemplate =/*html*/`
         <p>You can access the character creator by pressing
         on the button below</p><br>
 
-        <p class="text">41fb4674-3c27-4c7f-9579-ad25cc43ebd0</p>
-        Stinkmeaner
-        <p class="text">1f078b32-2596-417d-87ee-e210175f3fc0</p>
-
         <button class="main block" @click="startWizard">Create a new character!</button>
         <button v-if="currentStep.count > 0" class="main block secondary" @click="returnToWizard">Resume</button>
         <button v-if="currentStep.count > 0" class="main block danger" @click="stopWizard">Cancel</button>

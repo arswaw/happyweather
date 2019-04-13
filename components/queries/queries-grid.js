@@ -17,4 +17,4 @@ const QueriesGrid = {
     }
 }
 
-export { QueriesGrid }
+export default QueriesGrid

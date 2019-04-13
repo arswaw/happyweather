@@ -1,6 +1,5 @@
 import { CharacterTemplate } from "../../templates/character/character-template.js";
-import { Progress } from "./progress.js";
-import { GetCharacter } from "../../state/getCharacter.js";
+import GetCharacter from "../../state/getCharacter.js";
 
 const Character = {
     template: CharacterTemplate,
@@ -86,7 +85,7 @@ const Character = {
         }
     },
     components: {
-        'progress-bar': Progress
+        'progress-bar': () => import("./progress.js")
     },
     data: function () {
         return {
@@ -232,4 +231,4 @@ const Character = {
     }
 }
 
-export { Character }
+export default Character

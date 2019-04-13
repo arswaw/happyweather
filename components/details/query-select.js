@@ -1,7 +1,7 @@
 import { QuerySelectTemplate } from '../../templates/details/query-select-template.js'
 
 // State
-import { GetQueries } from '../../state/getQueries.js' 
+import GetQueries from '../../state/getQueries.js' 
 
 const QuerySelect = {
     template: QuerySelectTemplate,
@@ -28,4 +28,4 @@ const QuerySelect = {
     }
 }
 
-export { QuerySelect }
+export default QuerySelect

@@ -5,4 +5,4 @@ const CharacterMain = {
     template: CharacterMainTemplate
 }
 
-export { CharacterMain }
+export default CharacterMain

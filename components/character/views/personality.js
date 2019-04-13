@@ -4,4 +4,4 @@ const Personality = {
     template: PersonalityTemplate
 }
 
-export { Personality }
+export default Personality

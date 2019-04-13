@@ -1,10 +1,10 @@
 // State
-import { GetQueries} from '../../state/getQueries.js'
+import GetQueries from '../../state/getQueries.js'
 
 // Components
 import { QueriesTemplate } from '../../templates/queries/queries-template.js'
-import { QueriesGrid } from './queries-grid.js'
-import { CollapsePopup } from '../collapse-popup.js'
+import QueriesGrid from './queries-grid.js'
+import CollapsePopup from '../collapse-popup.js'
 
 const Queries = {
     props: ['isDetails'],
@@ -57,4 +57,4 @@ const Queries = {
     template: QueriesTemplate
 }
 
-export { Queries }
+export default Queries

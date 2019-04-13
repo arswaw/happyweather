@@ -45,4 +45,4 @@ const CollapsePopup = {
     }
 }
 
-export { CollapsePopup }
+export default CollapsePopup

@@ -8,4 +8,4 @@ async function* recordAnalytics(routeTaken) {
     }
 }
 
-export { recordAnalytics }
+export default recordAnalytics

@@ -6,4 +6,4 @@ async function* GetQueries (filter) {
     yield response.data
 }
 
-export { GetQueries }
+export default GetQueries

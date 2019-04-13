@@ -1,5 +1,5 @@
 // State
-import { GetQueries} from '../../state/getQueries.js'
+import GetQueries from '../../state/getQueries.js'
 
 // Template
 import { AddQueryTemplate } from '../../templates/details/add-query-template.js'
@@ -34,4 +34,4 @@ const AddQuery = {
     }
 }
 
-export { AddQuery }
+export default AddQuery

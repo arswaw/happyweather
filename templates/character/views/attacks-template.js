@@ -20,8 +20,8 @@ const AttacksTemplate =/*html*/`
         <ul class="list-group">
             <li v-for="spell of attacks.spells" class="list-item spell-list" v-bind:style="{ backgroundColor: getRandomColor() }">
                 <h4>Spell: <p><input v-model="spell.name"></p></h4>
-                <h4>Attack Bonus: <input v-model="spell.attackBonus"></h4>
-                <h4>Damage Type: <input v-model="spell.damageType"></h4>
+                <h4>Attack Bonus: <p><input v-model="spell.attackBonus"></p></h4>
+                <h4>Damage Type: <p><input v-model="spell.damageType"></p></h4>
                 <button>Delete</button>
             </li>
         </ul>
@@ -29,7 +29,7 @@ const AttacksTemplate =/*html*/`
         <h4>List of Spells</h4>
         <ul class="list-group">
             <li v-bind:style="{ backgroundColor: getRandomColor() }" class="list-item attack-list-grid attack-list" v-for="spell of attacks.list">
-                <input v-model="spell"/>
+                <input>
                 <button>Delete</button>
             </li>
         </ul>
