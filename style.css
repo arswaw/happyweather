@@ -414,6 +414,24 @@ progress.main {
     left: 0;
 }
 
+/* Social CSS */
+
+.profile-photo {
+    max-width: 100px;
+    margin-top: -92px;
+    margin-bottom: 5px;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2;
+}
+
+/* / Social CSS */
+
 /* Character CSS */
 nav.character {
     display: grid;
