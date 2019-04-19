@@ -400,12 +400,18 @@ button.secondary {
     background-color: slategray; 
 }
 
-progress {
+progress.character {
     height: 34px;
     width: 100%;
     position: fixed;
     left: 0;
     bottom: 0;
+}
+
+progress.main {
+    height: 10px;
+    width: 100%;
+    left: 0;
 }
 
 /* Character CSS */

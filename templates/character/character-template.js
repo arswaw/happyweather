@@ -47,7 +47,7 @@ const CharacterTemplate = /*html*/ `
             <button @click="startWizard(false)" class="main block danger">Exit</button>
         </div>
 
-        <progress v-bind:value="currentStep.progress" max="100" v-if="showWizard"></progress>
+        <progress class="character" v-bind:value="currentStep.progress" max="100" v-if="showWizard"></progress>
 
         <main class="character-grid">
             <router-view 

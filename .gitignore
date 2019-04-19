@@ -10,3 +10,6 @@ router.js
 animate.min.css
 axios.min.js
 vue-router.js
+vue-router.min.js
+smart.core.js
+smart.default.css

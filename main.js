@@ -1,6 +1,6 @@
 import { isLocalhost } from './globals.js'
 
-import Vue from './vue.min.js'
+import Vue from './vue.js'
 
 import { MainTemplate } from './templates/main-template.js'
 import Navbar from './components/navbar.js'
@@ -30,6 +30,24 @@ const router = new VueRouter({
     meta: {
       title: 'Home'
     },
+  },
+  {
+    path: '/social',
+    component: () => import('./components/social/social.js'),
+    name: 'Social Hub',
+    meta: {
+      title: 'Social'
+    },
+    children: [
+      {
+        path: 'profile',
+        component: () => import('./components/social/profile.js'),
+        name: 'Profile Page',
+        meta: {
+          title: 'Profile'
+        }
+      }
+    ]
   },
   {
     path: '/character',

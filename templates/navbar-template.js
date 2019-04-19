@@ -12,7 +12,7 @@ const NavbarTemplate = /*html*/ `
     >
 <nav v-if="subnavOpen" id="subnav" class="subnav">
     <a class="sub-nav-text" @click="toggleSubnav" href="#/details/select">Details</a>
-    <a class="sub-nav-text" @click="toggleSubnav" href="https://github.com/arswaw/happyweather" target="_blank">Github</a>
+    <a class="sub-nav-text" @click="toggleSubnav" href="#/social/profile">Social</a>
     <a class="sub-nav-text" @click="toggleSubnav" href="#/character/creatormenu">D&D</a>
 </nav>
 </transition>
