@@ -184,6 +184,10 @@ li.list-color {
     padding: 0px 1px 0px 10px;
 }
 
+a.no-underline {
+    text-decoration: none;
+}
+
 .health-text {
     grid-column: 1;
 }
@@ -427,7 +431,23 @@ progress.main {
 
 .profile-grid {
     display: grid;
-    grid-template-columns: 2;
+    grid-template-columns: 1;
+    grid-template-rows: 4;
+    grid-gap: 15px;
+}
+
+.profile-photos-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 3;
+    grid-gap: 10px;
+}
+
+.social-footer {
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    grid-template-rows: 3;
+    grid-gap: 5px;
 }
 
 /* / Social CSS */

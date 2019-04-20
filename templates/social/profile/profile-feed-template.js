@@ -1,5 +1,8 @@
 const ProfileFeedTemplate = /*html*/`
-    <h1>Profile Feed Works!</h1>
+    <aside>
+        <status-update></status-update><hr>
+        <feed-item></feed-item>
+    </aside>
 `
 
 export { ProfileFeedTemplate }

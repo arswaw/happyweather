@@ -1,5 +1,5 @@
 const ProfileTemplate = /*html*/`
-    <div>
+    <div class="profile-grid">
         <main-bio class="box"></main-bio>
         <about-section class="box"></about-section>
         <profile-photos-grid class="box"></profile-photos-grid>
