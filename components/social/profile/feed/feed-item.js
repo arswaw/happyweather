@@ -2,6 +2,7 @@ import { FeedItemTemplate } from '../../../../templates/social/profile/feed/feed
 import { FeedItemReplies } from './feed-item-replies.js';
 
 const FeedItem = {
+    props: ['item'],
     template: FeedItemTemplate,
     components: {
         'feed-item-replies': FeedItemReplies

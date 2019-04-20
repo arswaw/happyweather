@@ -450,6 +450,22 @@ progress.main {
     grid-gap: 5px;
 }
 
+.status-update {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.status-name-and-date {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.feed-item-replies {
+    margin-left:5%;
+    border-left: 2px solid green;
+    padding-left: 8px;
+}
+
 /* / Social CSS */
 
 /* Character CSS */

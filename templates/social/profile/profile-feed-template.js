@@ -1,7 +1,7 @@
 const ProfileFeedTemplate = /*html*/`
     <aside>
         <status-update></status-update><hr>
-        <feed-item></feed-item>
+        <feed-item v-bind:item="item" :key="item.id" v-for="item of items"></feed-item>
     </aside>
 `
 

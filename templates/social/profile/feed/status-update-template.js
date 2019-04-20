@@ -1,5 +1,8 @@
 const StatusUpdateTemplate = /*html*/ `
-    <h1>Status Update Works!</h1>
+    <section class="status-update">
+        <input type="text" placeholder="Message">
+        <button class="status-photo">Photo</button>
+    </section>
 `
 
 export { StatusUpdateTemplate }
