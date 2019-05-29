@@ -705,6 +705,10 @@ input {
         width: 27%;
     }
 
+    button.slideup {
+        width: 100%;
+    }
+
     button.block {
         width: 100%;
     }

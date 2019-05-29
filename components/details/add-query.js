@@ -14,8 +14,7 @@ const AddQuery = {
             this.grid = []
             this.showLoader = true
             const response = await GetQueries(this.filterByRequester)
-
-            this.grid = response.value
+            this.grid = response
             this.showLoader = false
             this.loaded = true
         },
