@@ -11,10 +11,10 @@ const AddQueryTemplate = /*html*/`
         </button>
         <div v-if="opened">
             <input @change="refresh" v-model="filterByRequester" type="text" placeholder="Enter your name">
-            <ul v-for="item of grid.slice(0, 5)">
+            <ul v-for="(item, index) of grid.slice(0, 5)">
                 <li class="query-small">
                     {{item.requester}}<br>
-                    <button class="main slideup">Add to Compare</button>
+                    <button @click="addToCompare(index)" class="main slideup">Add to Compare</button>
                 </li>
             </ul>
         </div>

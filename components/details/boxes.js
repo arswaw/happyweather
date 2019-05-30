@@ -8,6 +8,11 @@ import { isLocalhost } from '../../globals.js'
 
 const Boxes = {
     props: ['query'],
+    mounted: function() {
+      this.$root.$on('addToCompare', item => {
+        this.grid.push(item)
+      })
+    },
     template: BoxesTemplate,
     created: function() {
         console.info("query in boxes", this.query)
@@ -18,7 +23,8 @@ const Boxes = {
     },
     data: function() {
         return {
-            grid: [{
+            grid: [
+              {
                 "geographicalAttributes": {
                   "city-name": "New Paris, IN 46553, USA",
                   "elevation": 200,
@@ -26,7 +32,7 @@ const Boxes = {
                   "longitude": -85.8307059,
                   "state": "IN"
                 },
-                "_id": "5be5d8695b403a129dc48f01",
+                "_id": "asdfkl;'kas;ejf;ajs",
                 "date": "2018-11-09T18:56:41.546Z",
                 "uuid": "cb453f52-2fdf-4a1c-b034-c9ae1cd27fef",
                 "historical": [
@@ -142,7 +148,8 @@ const Boxes = {
                 "placeID": "ChIJpTbHbhWTFogRrTx0P_8hmAs",
                 "actual": [],
                 "__v": 0
-              }]
+              }
+            ]
         }
     },
     components: {

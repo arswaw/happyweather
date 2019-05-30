@@ -1,7 +1,7 @@
 const BoxTemplate = /*html*/`
 <section>
 <div v-if="query">
-    <h4>{{query.shortName}} - <em>{{query.requester}}</em> - {{new Date(query.date).toDateString()}}</h4>
+    <h4> <strong>{{query.requester}}</strong> - {{query.shortName}} - {{new Date(query.date).toDateString()}}</h4>
         <div>
         
         <span class="status-green" v-if="query && query.predictions.length>0">Predictions available.</span>

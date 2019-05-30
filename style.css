@@ -613,6 +613,17 @@ input {
 
 /* Places Form Grid */
 
+/* Boxes Grid */
+
+.boxes-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+}
+
+/* /Boxes Grid */
+
 /* Queries Template */
 
 .queries-grid-container {
@@ -671,6 +682,10 @@ input {
     .weather-width {
         margin-left: 20%;
         max-width: 60%;
+    }
+
+    .boxes-grid {
+        grid-template-columns: auto auto;
     }
 
     .grid-container>div {

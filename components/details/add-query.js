@@ -10,6 +10,9 @@ const AddQuery = {
         openQueries: function() {
             this.opened = true
         },
+        addToCompare(index) {
+            this.$root.$emit('addToCompare', this.grid[index])
+        },
         async refresh() {
             this.grid = []
             this.showLoader = true
