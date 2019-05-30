@@ -12,6 +12,15 @@ const Boxes = {
       this.$root.$on('addToCompare', item => {
         this.grid.push(item)
       })
+      this.$root.$on('removeItemFromGrid', id => {
+        const gridItem = this.grid.find(g => {
+          return g._id === id
+        })
+
+        const indexOfGridItem = this.grid.indexOf(gridItem)
+
+        this.grid.splice(indexOfGridItem, 1)
+      })
     },
     template: BoxesTemplate,
     created: function() {

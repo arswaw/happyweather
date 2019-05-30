@@ -28,6 +28,9 @@ const Box = {
             }
             console.info("Determine Comparison", box, this.choice1, this.choice2, this.choices)
         },
+        removeGridItem(id) {
+            this.$root.$emit('removeItemFromGrid', id)
+        },
         resetBox(box) {
 
             if (box === "first") {
