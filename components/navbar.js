@@ -4,12 +4,16 @@ const Navbar = {
     template: NavbarTemplate,
     data: function() {
         return {
-            subnavOpen: false
+            subnavOpen: false,
+            slidingNavOpen: false
         }
     },
     methods: {
         toggleSubnav() {
             this.subnavOpen = !this.subnavOpen
+        },
+        toggleSlidingNav() {
+            this.slidingNavOpen = !this.slidingNavOpen
         }
     }
 }

@@ -3,19 +3,25 @@ const NavbarTemplate = /*html*/ `
 <nav class="nav-main" id="nav-main">
   <a class="animated nav-title noselect" href="#">Happy Weather!</a>
   <a class="white-nav-text noselect" href="#/">Home</a>
-  <a class="white-nav-text noselect" style="cursor:pointer" @click="toggleSubnav">More</a>
+  <a class="white-nav-text noselect" style="cursor:pointer" @click="toggleSlidingNav">More</a>
 </nav>
+
 <transition appear
-        name="subnav-transition"
-        enter-active-class="animated lightSpeedIn"
-        leave-active-class="animated lightSpeedOut"
+        name="sliding-nav-transition"
+        enter-active-class="animated slideInLeft"
+        leave-active-class="animated slideOutLeft"
     >
-<nav v-if="subnavOpen" id="subnav" class="subnav">
-    <a class="sub-nav-text" @click="toggleSubnav" href="#/details/select">Details</a>
-    <a class="sub-nav-text" @click="toggleSubnav" href="#/social/profile">Social</a>
-    <a class="sub-nav-text" @click="toggleSubnav" href="#/character/creatormenu">D&D</a>
+<nav v-if="slidingNavOpen" id="sliding-nav" class="sliding-nav">
+  <ul>
+    <li><a class="sliding-nav-text" @click="toggleSlidingNav" href="#/details/select">Details</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/social/profile">Social</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/character/creatormenu">D&D</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="https://github.com/arswaw/happyweather" target="_blank">Github</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="https://github.com/arswaw/weatherfun" target="_blank">Backend</a></li>
+  </ul>
 </nav>
 </transition>
+
 </nav>
 `
 

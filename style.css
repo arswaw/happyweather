@@ -131,7 +131,7 @@
     color: darkturquoise
 }
 
-.subnav {
+nav.subnav {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     grid-auto-rows: auto;
@@ -146,6 +146,27 @@
 .sub-nav-text {
     text-decoration: none;
     letter-spacing: 2px;
+}
+
+nav.sliding-nav {
+    width: 92.5%;
+    position: absolute;
+    left: 0;
+    top: 11.5%;
+    height: 100%;
+    transition: 1s;
+    background-color: rgb(233, 232, 232);
+    padding: 10px;
+    z-index: 101;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.sliding-nav-text {
+    font-size: 48px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bolder;
 }
 
 p {
@@ -707,13 +728,18 @@ input {
         padding: 15px 23% 15px 22%;
     }
 
-    .subnav {
+    nav.subnav {
         width: 50%;
         position: fixed;
         margin-bottom: 0%;
         transition: 1s;
         right: 0;
         border-radius: 0px 0px 0px 5px;
+    }
+
+    nav.sliding-nav {
+        top: 8.5%;
+        width: 25%;
     }
 
     button.main {

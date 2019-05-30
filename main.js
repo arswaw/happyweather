@@ -176,9 +176,9 @@ const router = new VueRouter({
 
 // Change the title based on the page name
 router.beforeEach((to, from, next) => {
-  const subnav = document.getElementById("subnav")
-  if (subnav) {
-    subnav.style.display = "none"
+  const slidingNav = document.getElementById("sliding-nav")
+  if (slidingNav) {
+    slidingNav.style.display = "none"
   }
   document.title = `${to.meta.title} | Happy Weather`
   next()
