@@ -14,7 +14,8 @@ const NavbarTemplate = /*html*/ `
 <nav v-if="slidingNavOpen" id="sliding-nav" class="sliding-nav">
   <ul>
     <li><a class="sliding-nav-text" @click="toggleSlidingNav" href="#/details/select">Details</a></li>
-    <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/social/profile">Social</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/social/profile">Profile</a></li>
+    <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/social/feed">Feed</a></li>
     <li><a class="sliding-nav-text" @click="toggleSubnav" href="#/character/creatormenu">D&D</a></li>
     <li><a class="sliding-nav-text" @click="toggleSubnav" href="https://github.com/arswaw/happyweather" target="_blank">Github</a></li>
     <li><a class="sliding-nav-text" @click="toggleSubnav" href="https://github.com/arswaw/weatherfun" target="_blank">Backend</a></li>

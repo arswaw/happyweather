@@ -21,7 +21,7 @@ const Queries = {
             this.selectedQuery = {}
         })
     },
-    data: function () {
+    data: function() {
         return {
             queries: [],
             status: "",
@@ -37,6 +37,49 @@ const Queries = {
         }
     },
     methods: {
+        refreshWithMockData() {
+            this.queries = [{
+                "requester": "Alex Otten",
+                "geographicalAttributes": {
+                    "city-name": "Lansing",
+                    "elevation": 10,
+                    "latitude": 12,
+                    "longitude": 24,
+                    "state": "Michigan"
+                },
+                "date": new Date(),
+                "uuid": "abcd",
+                "shortName": "Weather Test",
+                "isGreaterThanOneWeek": false,
+                "isGreaterThanOneMonth": false,
+                "isGreaterThanOneYear": false,
+                "numberOfPredictedDays": false,
+                "rangeFrom": new Date(),
+                "rangeTo": new Date("1/10/2021"),
+                "version": "1.0",
+                "placeID": "1234",
+                "historical": [{
+                    "day": "Monday",
+                    "date": new Date(),
+                    "min": 0,
+                    "max": 4
+                }],
+                "predictions": [{
+                    "day": "Tuesday",
+                    "date": new Date(),
+                    "min": 0,
+                    "max": 8
+                }],
+                "actual": [{
+                    "day": "Wednesday",
+                    "date": new Date(),
+                    "min": 0,
+                    "max": 12
+                }]
+            }]
+            this.$root.$emit('toast', "Refreshed query list with test data!")
+            this.showSpinner = false
+        },
         async refresh() {
             this.queries = []
             this.showSpinner = true
@@ -52,10 +95,12 @@ const Queries = {
             this.showSpinner = false
         },
     },
-    created: async function () {
-        await this.refresh()
+    created: async function() {
+        this.refreshWithMockData()
+        //await this.refresh()
         this.$root.$on('RefreshQueries', () => {
-            this.refresh()
+            this.refreshWithMockData()
+            //this.refresh()
         })
     },
     template: QueriesTemplate

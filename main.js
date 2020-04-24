@@ -46,6 +46,14 @@ const router = new VueRouter({
         meta: {
           title: 'Profile'
         }
+      },
+      {
+        path: 'feed',
+        component: () => import('./components/social/feed.js'),
+        name: 'Feed Page',
+        meta: {
+          title: 'Feed'
+        }
       }
     ]
   },
